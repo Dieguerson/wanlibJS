@@ -5,6 +5,10 @@ if (parseInt(numero) > 1000){
     alert("Tu número es más grande que 1000! Pedazo de número!");
     console.log("Tu número es más grande que 1000! Pedazo de número!");
 }
+else if (parseInt(numero) === 1000){
+    alert("Tu número es 1000! Que puntería, justo lo que estaba pensando!");
+    console.log("Tu número es 1000! Que puntería, justo lo que estaba pensando!");
+}
 else{
     alert("Tu número es mas chico que mil. Menos mal, solo aprendí hasta el 957.");
     console.log("Tu número es mas chico que mil. Menos mal, solo aprendí hasta el 957.");
