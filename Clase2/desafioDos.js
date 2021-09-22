@@ -73,7 +73,11 @@ else{
 
 var numeroMil;
 numeroMil = prompt ("Escribí un número");
-if (parseInt(numeroMil) % 2 == 0){
+if (parseInt(numeroMil) === 0){
+    alert("Tu número es " + numeroMil);
+    console.log("Tu número es " + numeroMil);
+}
+else if (parseInt(numeroMil) % 2 == 0){
     alert("Tu número es par");
     console.log("Tu número es par");
 }
