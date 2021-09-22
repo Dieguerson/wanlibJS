@@ -54,3 +54,6 @@ edad = anoActual - parseInt(anoNacimiento);
 console.log("Y vos tenés " + edad + " años");
 
 alert("Gracias! Sos Crack!");
+
+var respuestas = document.getElementById("respuestas");
+respuestas.innerHTML += "<p>" + edad + "</p>";

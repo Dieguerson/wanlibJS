@@ -4,68 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/wax.png">
+    <title>El Librero Errante JS</title>
 </head>
 <body>
-    <h1>Las respuestas no solicitadas del gordo:</h1>
-    <script>
-        var nombre;
-        var apellido;
-        var primerNumero;
-        var segundoNumero;
-        var ladoCuadrado;
-        var edadMadre;
-        var edadPadre;
-        var anoNacimiento
-        var anoActual;
-        var nombreApellido;
-        var operaciones;
-        var diferenciaPadreMadre;
-        var diferenciaMadrePadre;
-        var edad;
-
-        nombre = prompt("Cuál es tu nombre?");
-        apellido = prompt("Y tu apellido?");
-        alert("Hola, " + nombre + " " + apellido + ", cómo estás?");
-        alert("Ahora te voy a pedir mil datos y después voy a dejar que JS y la tecnología hagan su magia para contestar preguntas que nadie hizo. Gracias por tu cooperación. Y perdón... <3")
-
-        primerNumero = prompt("Número Favorito sin decimales?");
-        segundoNumero = prompt("Número Favorito con decimales?");
-        ladoCuadrado = prompt("Inventá la medida de un lado de un cuadrado!");
-        edadMadre = prompt("Qué edad tiene tu madre?");
-        edadPadre = prompt("Qué edad tiene tu padre?");
-        anoNacimiento = prompt("En que año naciste?");
-
-        console.log("Tu nombre es: " + nombre);
-        console.log("Tu apellido es: " + apellido);
-        console.log("Tu número favorito sin decimales es: " + primerNumero);
-        console.log("Y tu número favorito con decimales es: " + segundoNumero);
-        console.log("El lado de tu cuadrado es: " + ladoCuadrado);
-        console.log("La edad de tu madre es: " + edadMadre + " años");
-        console.log("Y la de tu padre es: " + edadPadre + " años");
-        anoActual = new Date().getFullYear();
-        console.log("Este es el año " + anoActual);
-        console.log("Y tu año de nacimiento es: " + anoNacimiento);
-
-        operaciones = parseInt(primerNumero) + parseFloat(segundoNumero);
-        console.log("La suma de tus números favoritos da: " + operaciones);
-        operaciones = parseInt(primerNumero) * parseFloat(segundoNumero);
-        console.log("La multiplicación de tus números favoritos da: " + operaciones);
-        console.log("La resta de tus números favoritos da: " + (parseInt(primerNumero) - parseFloat(segundoNumero)));
-        console.log("La división de tus números favoritos da: " + (parseInt(primerNumero) / parseFloat(segundoNumero)));
-        areaCuadrado = ladoCuadrado * ladoCuadrado;
-        console.log("El área del cuadrado que inventaste es: " + areaCuadrado);
-        console.log("El consecutivo de tu número favorito sin decimales es: " + (parseInt(primerNumero) + 1));
-        console.log("Y el consecutivo de tu número favorito con decimales es: " + (parseFloat(segundoNumero) + 1));
-        diferenciaPadreMadre = edadPadre - edadMadre;
-        console.log("La diferencia entre la edad de tu padre y la de tu madre es: " + diferenciaPadreMadre + " años");
-        diferenciaMadrePadre = edadMadre - edadPadre;
-        console.log("Y la diferencia entre tu madre y tu padre: " + diferenciaMadrePadre + " años");
-        edad = anoActual - parseInt(anoNacimiento);
-        console.log("Y vos tenés " + edad + " años");
-        
-        alert("Gracias! Sos Crack!");
-    </script>
-    <!--<script src="wanLibJS.js"></script>-->
+    <h1>Índice</h1>
+    <a href="Clase1/claseUno.html"><p>Clase 1</p></a>
+    <a href="Clase2/claseDos.html"><p>Clase 2</p></a>
+    <!--<a href="Clase3/claseTres.html"><p>Clase 3</p></a>
+    <p>Clase 4</p>
+    <p>Clase 5</p>
+    <p>Clase 6</p>
+    <p>Clase 7</p>
+    <p>Clase 8</p>
+    <p>Clase 9</p>
+    <p>Clase 10</p>
+    <p>Clase 11</p>
+    <p>Clase 12</p>
+    <p>Clase 13</p>
+    <p>Clase 14</p>
+    <p>Clase 15</p>
+    <p>Clase 16</p>-->
+    <a href="https://github.com/Dieguerson/wanlibJS.git"><p class="repo"><i class="bi bi-github"></i> Repositorio en GitHub</p></a>
+    <p class="agradecimientos">Idea de Índice robada a Nahuel Gómez</p>
 </body>
 </html>
