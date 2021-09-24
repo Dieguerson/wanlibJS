@@ -39,8 +39,8 @@ else {
 //Ejercicio B
 do{
     let operacion = prompt("Escriba la operación que desea realizar: Suma, Multiplicación, Resta o División");
-    operacion.toLowerCase()
-    if (operacion != "suma" && operacion != "multiplicación" && operacion != "multiplicacion" && operacion != "resta" && operacion != "división" && operacion != "division"){
+    operacion
+    if (operacion.toLowerCase() != "suma" && operacion.toLowerCase() != "multiplicación" && operacion.toLowerCase() != "multiplicacion" && operacion.toLowerCase() != "resta" && operacion.toLowerCase() != "división" && operacion.toLowerCase() != "division"){
         console.log("Vuelva a intentarlo más tarde");
         break;
     }else{
