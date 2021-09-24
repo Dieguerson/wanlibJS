@@ -41,6 +41,7 @@ do{
     let operacion = prompt("Escriba la operación que desea realizar: Suma, Multiplicación, Resta o División");
     operacion.toLowerCase()
     if (operacion != "suma" && operacion != "multiplicación" && operacion != "multiplicacion" && operacion != "resta" && operacion != "división" && operacion != "division"){
+        console.log("Vuelva a intentarlo más tarde");
         break;
     }else{
         let numeroUno = prompt("Escriba el primer operando.");
