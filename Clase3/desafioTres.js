@@ -1,4 +1,4 @@
-/*//Ejercicio A
+//Ejercicio A
 let votosA = 0;
 let votosB = 0;
 let votosInc = 0;
@@ -206,7 +206,7 @@ for (let i = 0; i <= 10; i++){
         console.log("El promedio general del Curso es: " + promedioGeneral);
     }
 }
-*/
+
 for (let i = 0; i <=10; i++){
     console.log (i);
 }
