@@ -53,7 +53,7 @@ if (parseInt(numero) % 2 == 0){
 else{
     alert("Tu número es impar");
 }
-*/
+
 
 var numeroUno;
 var numeroDos;
@@ -74,4 +74,12 @@ else if (parseFloat(numeroTres) > parseFloat(numeroUno) && parseFloat(numeroTres
 }
 else{
     alert("Todos los números son iguales!");
-}
+}*/
+
+//Operador Ternario: "?" es otra forma ded escribir el if si es código de más de una linea al final de la linea lleva coma
+
+proposicion ? salida1 : salida2
+
+//Para concatenar se puede hacer `var texto var texto`
+// prompt("texto", "placeholder")
+// var.length() a una variable de tipo string da cantidad de caracteres
