@@ -21,16 +21,16 @@ class creation{
     getStats(){
         console.log ("Los stats de " + this.nomPers + " son:");
         console.log("Fuerza: " + this.fuerza);
-        console.log("Dexterity: " + this.destreza);
-        console.log("Constitution: " + this.constitucion);
+        console.log("Destreza: " + this.destreza);
+        console.log("Constitución: " + this.constitucion);
     }
     getModifiers(){
         let fuerza = Math.floor((STR - 10)/2);
         let destreza = Math.floor((DEX - 10)/2);
         let constitucion = Math.floor((CON - 10)/2);
         console.log("Tu modificador de fuerza es: " + fuerza);
-        console.log("Tu modificador de fuerza es: " + destreza);
-        console.log("Tu modificador de fuerza es: " + constitucion);
+        console.log("Tu modificador de destreza es: " + destreza);
+        console.log("Tu modificador de constitución es: " + constitucion);
     }
 }
 
