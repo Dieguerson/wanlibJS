@@ -1,0 +1,27 @@
+.table__ul--style{
+    list-style-image: url(../img/pen.svg);
+}
+.pricing__card--size{
+    width: 18rem; 
+    height: 270px;
+}
+.pricing__cardES--size{
+    width: 20rem; 
+    height: 270px;
+}
+.card--transform:hover{
+    transform: scale(1.1);
+    cursor: default;
+}
+.pricing__accordion--borderTop{
+    border-radius: 30px 0 0;
+}
+.pricing__accordion--borderBottom{
+    border-radius: 0 0 30px !important;
+}
+.pricing__accordion--shadowSmall{
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+.pricing__accordion--shadow{
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}

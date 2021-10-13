@@ -1,0 +1,32 @@
+{
+    "name": "the_wandering_librarian",
+    "version": "2.0.0",
+    "description": "A character story writing site",
+    "keywords": [
+        "The Wandering Librarian",
+        "Character Creation",
+        "Dungeons and Dragons",
+        "Stories"
+    ],
+    "main": "index.js",
+    "author": "Diego Gabrielli <diegomgabrielli@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Dieguerson/wanlib.git"
+    },
+    "homepage": "https://dieguerson.github.io/wanlib/",
+    "license": "ISC",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build-css": "node-sass --include-path scss scss/main.scss css/main.css",
+        "watch-css": "nodemon -e scss -x \"npm  run build-css\""
+    },
+    "devDependencies": {
+        "node-sass": "^6.0.1",
+        "nodemon": "^2.0.12",
+        "prettier": "2.3.2"
+    },
+    "dependencies": {
+        "@popperjs/core": "^2.10.1"
+    }
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" href="img/wax.svg">
+        <title>El Librero Errante</title>
+        <meta name="description" content="¡Escribimos la historia de tu personaje de RPGs de mesa por vos!">
+        <meta name="keywods" content="contacto, información, formulario, servicios, adicionales, librero, errante, historias, fantasía">
+        <meta name="author" content="Diego Gabrielli">
+    </head>
+    <body class="bg-secondary">
+        <a href="" id="top"></a>
+        <header class="position-sticky top-0 nav--z-index">
+            <nav class=" container-fluid navbar navbar-expand-lg bg-dark p-0">
+                <div class="container-fluid p-2 pb-1">
+                    <div class="container-fluid d-flex justify-content-between p-0 m-0">
+                        <a href="inicio.html"><img src="img/wax.svg" class="logo--size" alt="Logo"></a>
+                        <a class="navbar-brand active align-self-center text-center text-wrap p-0 m-0 nav__brandEs--size nav__brandFont--size nav__brand--justify link--color" href="inicio.html"><strong>El Librero Errante Woric Leatherbound</strong></a>
+                        <button class="navbar-dark navbar-toggler shadow-none p-0" type="button" data-bs-toggle="offcanvas" data-bs-target=".navbarSupportedContent" aria-controls=".navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="offcanvas offcanvas-start navbar-collapse navbarSupportedContent bg-dark border-0 nav__sidemenu--size nav__list--visibility">
+                        <ul class="navbar-nav justify-content-lg-end align-items-lg-center px-3 px-lg-0 me-auto mb-2 mb-lg-0 nav__list--size">
+                            <li class="nav-item">
+                                <a class="nav-link active link--color" aria-current="page" href="inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown bg-dark rounded">
+                                <div class="btn-group">
+                                    <a class="nav-link active link--color" href="historias.html">Historias</a>
+                                    <span class="nav-link dropdown-toggle dropdown-toggle-split color-primary px-1 ps-lg-0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </span>
+                                    <ul class="dropdown-menu bg-dark border-primary nav__stories--size">
+                                        <li>
+                                            <a class="dropdown-item link-primary bg-dark active link--color" href="stories/grimBronEs.html">- Grimund Bronzeheart</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider link-primary"></li>
+                                        <li>
+                                            <a class="dropdown-item link-primary bg-dark active link--color" href="stories/liZhuEs.html">- Li Zhu</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider link-primary"></li>
+                                        <li>
+                                            <a class="dropdown-item link-primary bg-dark active link--color" href="stories/dainThunEs.html">- Dain Thundermaster</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider link-primary"></li>
+                                        <li>
+                                            <a class="dropdown-item link-primary bg-dark active link--color" href="stories/bharashEs.html">- Bharash</a>
+                                        </li>
+                                        <li><hr class="dropdown-divider link-primary"></li>
+                                        <li>
+                                            <a class="dropdown-item link-primary bg-dark active link--color" href="stories/bratBersEs.html">- Bratoslav Bersk</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active link--color" href="nosotros.html">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active link--color" href="precios.html">Precios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active link--color" href="contacto.html">Contacto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-none d-lg-block" href="contact.html">
+                                    <img class="rounded" src="img/ingles.jpg" alt="English">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link active position-absolute d-lg-none bg-dark border-primary rounded-pill p-1 m-1 link--color nav__langFont--size border nav__lang--opacity" href="contact.html">English</a>
+            </div>
+        </header>
+        <h1 class="m-3">Contacto</h1>
+        <form action="" method="GET" class="row justify-content-end mx-auto px-3 p-md-0 w-sm-75 w-lg-50 w-xxl-25">
+            <fieldset class="text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                <legend class="fw-bold p-1 pt-0">Información Personal</legend>
+                <div class="form-floating mb-3">
+                    <input type="text" name="Name" id="name" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                    <label for="name" class="text-start text-primary">Nombre Completo:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" name="Mail" id="mail" placeholder="grimund@dwarfmail.com" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                    <label for="mail" class="text-start text-primary">Mail:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" name="Phone" id="phone" placeholder="4889-6500" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                    <label for="phone" class="text-start text-primary">Teléfono:</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" name="Cel" id="cel" placeholder="+54 9 11-2856-2254" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                    <label for="cel" class="text-start text-primary">Celular:</label>
+                </div>
+            </fieldset>
+            <fieldset class="d-flex flex-wrap justify-content-center text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                <legend class="fw-bold p-1 pt-0">Servicios</legend>
+                <label for="qs" class="m-auto p-2">
+                    <input type="radio" name="services" id="qs" value="Quick Search" class="contact__cardRadioElement">
+                    <div class="d-flex flex-column text-secondary border border-secondary bg-dark card--border contact__cardRadio contact__cardRadio--size contact__cardRadio--bg">
+                        <i class="bi bi-info-circle align-self-end pt-1 pe-2" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ol><li>Charla previa para comentar ideas y cerrar conceptos.</li><li>Investigación del Setting en el que se va a desarrollar la historia.</li><li>Historia entre 500 y 1000 palabras.</li><li>Hasta 2 (Dos) correcciones posteriores.</li></ol>"></i>
+                        <div class="fs-5 p-3 pt-1">Búsqueda Rápida</div>
+                        <div class="fs-5 p-4 pt-0">$ 500</div>
+                    </div>
+                </label>
+                <label for="ds" class="m-auto p-2">
+                    <input type="radio" name="services" id="ds" value="Detailed Search" class="contact__cardRadioElement">
+                    <div class="d-flex flex-column text-secondary border border-secondary bg-dark card--border contact__cardRadio contact__cardRadio--size contact__cardRadio--bg">
+                        <i class="bi bi-info-circle align-self-end pt-1 pe-2" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ol><li>Charla previa para comentar ideas y cerrar conceptos.</li><li>Investigación del Setting en el que se va a desarrollar la historia.</li><li>Historia entre 1000 y 1500 palabras.</li><li>Hasta 2 (Dos) correcciones posteriores.</li></ol>"></i>
+                        <div class="fs-5 p-3 pt-1 px-2">Búsqueda Detallada</div>
+                        <div class="fs-5 p-4 pt-0">$ 1.000</div>
+                    </div>
+                </label>
+                <label for="fs" class="m-auto p-2">
+                    <input type="radio" name="services" id="fs" value="Full on Search" class="contact__cardRadioElement">
+                    <div class="d-flex flex-column text-secondary border border-secondary bg-dark card--border contact__cardRadio contact__cardRadio--size contact__cardRadio--bg">
+                        <i class="bi bi-info-circle align-self-end pt-1 pe-2" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ol><li>Charla previa para comentar ideas y cerrar conceptos.</li><li>Investigación del Setting en el que se va a desarrollar la historia.</li><li>Historia entre 1500 y 2000 palabras.</li><li>Hasta 2 (Dos) correcciones posteriores.</li></ol>"></i>
+                        <div class="fs-5 p-3 pt-1">Búsqueda a Fondo</div>
+                        <div class="fs-5 p-4 pt-0">$ 1.500</div>
+                    </div>
+                </label>
+            </fieldset>
+            <fieldset class="col-12 d-flex flex-wrap justify-content-center text-center bg-success border border-2 shadow my-2 p-3 pb-3 contact__fieldset--border">
+                <legend class="fw-bold p-1 pt-0">Adicionales</legend>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="spells" value="SP" class="d-none contact__cardCheckInput">
+                        <label for="spells" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un PDF con los hechizos de tu personaje de nivel 1 a nivel 10.</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Hechizos</h3>
+                                <h3 class="fs-5 pt-0">$ 100</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="charSheet" value="CS" class="d-none contact__cardCheckInput">
+                        <label for="charSheet" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un PDF con todos los datos que necesitás para llenar tu hoja de personaje nivel 1. Para que no tengas que tomarte el trabajo de tirar dados o leer libros.</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Hoja de Personaje</h3>
+                                <h3 class="fs-5 pt-0">$ 200</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="level8" value="l8" class="d-none contact__cardCheckInput">
+                        <label for="level8" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un PDF con todos los datos que necesitás para llenar tu hoja de personaje nivel 1. Para que no tengas que tomarte el trabajo de tirar dados o leer libros.</li><li>En el mismo PDF vas a encontrar la progresión nivel a nivel hasta nivel 8.</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Hoja Nivel 8</h3>
+                                <h3 class="fs-5 pt-0">$ 300</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="level16" value="l16" class="d-none contact__cardCheckInput">
+                        <label for="level16" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un PDF con todos los datos que necesitás para llenar tu hoja de personaje nivel 1. Para que no tengas que tomarte el trabajo de tirar dados o leer libros.</li><li>En el mismo PDF vas a encontrar la progresión nivel a nivel hasta nivel 16.</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Hoja Nivel 16</h3>
+                                <h3 class="fs-5 pt-0">$ 600</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="level20" value="l20" class="d-none contact__cardCheckInput">
+                        <label for="level20" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un PDF con todos los datos que necesitás para llenar tu hoja de personaje nivel 1. Para que no tengas que tomarte el trabajo de tirar dados o leer libros.</li><li>En el mismo PDF vas a encontrar la progresión nivel a nivel hasta nivel 20.</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Hoja Nivel 20</h3>
+                                <h3 class="fs-5 pt-0">$ 750</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="mx-2 mb-0 p-2 px-0 contact__cardCheck">
+                    <li class="position-relative bg-dark overflow-hidden border border-secondary shadow card--border contact__cardCheck--size">
+                        <input type="checkbox" name="additionals" id="fullChar" value="FC" class="d-none contact__cardCheckInput">
+                        <label for="fullChar" class="radio d-block position-absolute w-100 m-auto conact__cardCheckLabel"></label>
+                        <i class="bi bi-info-circle align-self-end text-secondary pe-2 pt-1 contact__cardCheck--border" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="left" title="<ul><li>Un personaje creado de cero.</li><li>Elegí un servicio y los adicionales que quieras, y yo me encargo del resto!</li></ul>"></i>
+                        <div class="position-absolute bg-primary rounded-circle m-auto contact__cardCheck--bg"></div>
+                        <div class="contact__cardCheckBody text-secondary position-relative m-auto w-100">
+                            <div class="position-relative bg-primary rounded-circle contact__cardCheckToggle">
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                                <span class="position-absolute top-50 start-50 bg-secondary contact__cardCheckCross"></span>
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="fs-5 p-3 pt-0 pb-2 px-2">Personaje Completo</h3>
+                                <h3 class="fs-5 pt-0">$750</h3>
+                            </div>
+                            <div class="position-absolute text-center bg-dark text-secondary px-2 contact__cardCheckCancel">CANCELAR</div>
+                        </div>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                <legend class="fw-bold p-1 pt-0">Tu Idea </legend>
+                <div class="d-flex flex-column">
+                    <label for="gender" class="text-start fs-5 fw-bold ms-n1 mb-1">Género:</label>
+                    <select class="form-select text-secondary bg-dark border border-secondary shadow-sm mb-2" name="Gender" id="gender">
+                        <option value="None"></option>
+                        <option value="Female">Femenino</option>
+                        <option value="Male">Masculino</option>
+                        <option value="Other">Otro</option>
+                    </select>
+                    <textarea name="otro" rows="2" cols="1" placeholder="Si elegiste Otro y querés, contame cual." class="form-control text-secondary bg-dark m-auto mb-4 shadow"></textarea>
+                    <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Raza:</label>
+                    <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
+                        <option value="None"></option>
+                        <option value="Dwarf">Enano</option>
+                        <option value="Elf">Elfo</option>
+                        <option value="Halfling">Mediano</option>
+                        <option value="Human">Humano</option>
+                        <option value="Dragonborn">Dracónido</option>
+                        <option value="Gnome">Gnomo</option>
+                        <option value="HalfElf">Medio Elfo</option>
+                        <option value="HalfOrc">Medio Orco</option>
+                        <option value="Tiefling">Tiefling</option>
+                        <option value="Unknown">No Sé</option>
+                    </select>
+                    <label for="class" class="text-start fs-5 fw-bold ms-n1 mb-1">Clase:</label>
+                    <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" id="class" name="Class">
+                        <option value="None"></option>
+                        <option value="Barbarian">Barbaro</option>
+                        <option value="Bard">Bardo</option>
+                        <option value="Cleric">Clérigo</option>
+                        <option value="Druid">Druida</option>
+                        <option value="Fighter">Guerrero</option>
+                        <option value="Monk">Monje</option>
+                        <option value="Paladin">Paladín</option>
+                        <option value="Ranger">Explorador</option>
+                        <option value="Rogue">Bribón</option>
+                        <option value="Sorcerer">Hechizero</option>
+                        <option value="Warlock">Brujo</option>
+                        <option value="Wizard">Mago</option>
+                        <option value="Unknown">No sé</option>
+                    </select>
+                    <label for="background" class="text-start fs-5 fw-bold ms-n1 mb-1">Trasfondo:</label>
+                    <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" id="background" name="Background">
+                        <option value="None"></option>
+                        <option value="Acolyte">Acólito</option>
+                        <option value="Charlatan">Charlatán</option>
+                        <option value="Criminal">Criminal</option>
+                        <option value="Entertainer">Animador</option>
+                        <option value="FolkHero">Héroe Popular</option>
+                        <option value="GuildArtisan">Artesano del Gremio</option>
+                        <option value="Hermit">Hermitaño</option>
+                        <option value="Noble">Noble</option>
+                        <option value="Outlander">Forastero</option>
+                        <option value="Sage">Sabio</option>
+                        <option value="Sailor">Marinero</option>
+                        <option value="Soldier">Soldado</option>
+                        <option value="Urchin">Callejero</option>
+                        <option value="Unknown">No Sé</option>
+                    </select>
+                </div>
+                <label for="idea" class="text-start fs-5 fw-bold ms-n1 mb-1">¿Querés Agregar Algo?</label>
+                <textarea class="form-control text-secondary bg-dark shadow m-auto mb-3" name="Idea" id="idea" rows="6" cols="1" placeholder="¿Ya sabés algo de tu héroe? ¿Querés jugar características de Raza o Trasfondo alternativas? ¿Algo más que quieras agregar? ¡Escribilo acá!"></textarea>
+            </fieldset>
+            <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Borrar">
+            <input class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="submit" value="Enviar">
+        </form>
+        <a href="#top" class="position-fixed text-dark fs-1 backTop--position"><i class="bi bi-arrow-up-circle-fill backTop--opacity"></i></a>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center bg-dark text-primary p-1">
+            <a href="inicio.html"><img src="img/wax.svg" alt="Logo" class="logo--size"></a>
+            <a href="mapaSitio.html"  class="text-decoration-none fw-bolder link--color">Mapa del Sitio</a>
+            <a href="https://www.instagram.com/wan.lib/" class="link--color"><i class="bi bi-instagram fs-3"></i></a>
+            <strong class="w-100 text-end footer__text--size footer__font--size">Desarrollado por Diego Gabrielli</strong>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script> 
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+.character__table--border{
+    border: 2px solid rgba(38, 38, 38, 1);
+    border-collapse: collapse;
+}
+.story__img--size{
+    width: 90%;
+}
+.substories__linkImg--size{
+    width: 35px;
+}
+.substories__break--size{
+    width: 90%;
+    height: 3px;
+    font-size: 2px;
+}
+.substories__prev--direction{
+    direction: rtl;
+}
+@keyframes prevAnim{
+    0%   {transform: translate(0px);}
+    10%  {transform: translate(1px);}
+    20%  {transform: translate(2px);}
+    30%  {transform: translate(3px);}
+    40%  {transform: translate(4px);}
+    50%  {transform: translate(5px);}
+    60%  {transform: translate(6px);}
+    70%  {transform: translate(7px);}
+    80%  {transform: translate(6px);}
+    90%  {transform: translate(5px);}
+    100% {transform: translate(4px);}
+}
+.substories__prev--direction:hover{
+    background-image: linear-gradient(to right, rgba(191, 68, 78, 1) 21px, rgba(38, 38, 38, 1) 21px);
+    .susbtories__prev--animation{
+        animation-name: prevAnim;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+}
+.substories__back--transform:hover{
+    background-image: url(../../img/infiniteArchiveUs.jpg);
+    background-position: 35% 82%;
+    color: transparent;
+    transform: scale(1.2);
+}
+@keyframes nextAnim{
+    0%   {transform: translate(0px);}
+    10%  {transform: translate(-1px);}
+    20%  {transform: translate(-2px);}
+    30%  {transform: translate(-3px);}
+    40%  {transform: translate(-4px);}
+    50%  {transform: translate(-5px);}
+    60%  {transform: translate(-6px);}
+    70%  {transform: translate(-7px);}
+    80%  {transform: translate(-6px);}
+    90%  {transform: translate(-5px);}
+    100% {transform: translate(-4px);}
+}
+.substories__next--direction:hover{
+    background-image: linear-gradient(to left, rgba(191, 68, 78, 1) 21px, rgba(38, 38, 38, 1) 21px);
+    .susbtories__next--animation{
+        animation-name: nextAnim;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .character--position{
+        position: sticky;
+        top: 70px;
+    }
+    .character--format{
+        max-height: 71vh;
+        object-fit: cover;
+        object-position: 50% 0;
+    }
+}

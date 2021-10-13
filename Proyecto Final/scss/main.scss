@@ -1,0 +1,28 @@
+/* Bootstrap */
+@import 'bootstrap';
+/* General */
+@import 'ownScss/commons';
+/* Fuentes */
+@import 'ownScss/fonts';
+/* Nav */
+@import 'ownScss/nav';
+/* Inicio */
+@import 'ownScss/index';
+/* Historias */
+@import 'ownScss/stories';
+    /* Sub-Historias */
+    @import 'ownScss/subStories';
+/* Nosotros */
+@import 'ownScss/aboutUs';
+/* Precios */
+@import 'ownScss/pricing';
+/* Contacto */
+@import 'ownScss/contact';
+/* Nada para Ver Aquí */
+@import 'ownScss/nothingToSee.scss';
+/* Mapa del Sitio */
+@import 'ownScss/siteMap.scss';
+/* 404 */
+@import 'ownScss/404.scss';
+/* Footer */
+@import 'ownScss/footer';

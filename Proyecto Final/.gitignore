@@ -1,0 +1,5 @@
+*.ai
+*.temp
+*.prettierignore
+.vscode/
+node_modules/

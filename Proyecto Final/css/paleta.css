@@ -1,0 +1,50 @@
+/* Color Theme Swatches in Hex */
+.Red-and-Black-1-hex {
+    color: #bf454e;
+}
+.Red-and-Black-2-hex {
+    color: #d9c7a9;
+}
+.Red-and-Black-3-hex {
+    color: #d99a8b;
+}
+.Red-and-Black-4-hex {
+    color: #bf5050;
+}
+.Red-and-Black-5-hex {
+    color: #262626;
+}
+
+/* Color Theme Swatches in RGBA */
+.Red-and-Black-1-rgba {
+    color: rgba(191, 68, 78, 1);
+}
+.Red-and-Black-2-rgba {
+    color: rgba(216, 199, 169, 1);
+}
+.Red-and-Black-3-rgba {
+    color: rgba(216, 153, 138, 1);
+}
+.Red-and-Black-4-rgba {
+    color: rgba(191, 80, 80, 1);
+}
+.Red-and-Black-5-rgba {
+    color: rgba(38, 38, 38, 1);
+}
+
+/* Color Theme Swatches in HSLA */
+.Red-and-Black-1-hsla {
+    color: hsla(355, 48, 51, 1);
+}
+.Red-and-Black-2-hsla {
+    color: hsla(38, 38, 75, 1);
+}
+.Red-and-Black-3-hsla {
+    color: hsla(11, 50, 69, 1);
+}
+.Red-and-Black-4-hsla {
+    color: hsla(0, 46, 53, 1);
+}
+.Red-and-Black-5-hsla {
+    color: hsla(0, 0, 15, 1);
+}

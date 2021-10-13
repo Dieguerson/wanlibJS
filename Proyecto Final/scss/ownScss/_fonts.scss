@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+$mainFont: 'Merriweather', serif;
+$tableFont: 'Roboto', sans-serif;
+body{
+    font-family: $mainFont;
+}
+table{
+    font-family: $tableFont;
+}
+.nav__brandFont--size{
+    font-size: 0.9rem;
+}
+.nav__langFont--size{
+    font-size: 0.8rem;
+}
+.footer__font--size{
+    font-size: 0.7rem;
+}
+@media only screen and (min-width: 576px) {
+    .nav__brandFont--size{
+        font-size: unset;
+    }
+}

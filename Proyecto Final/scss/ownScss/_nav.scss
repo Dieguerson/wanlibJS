@@ -1,0 +1,44 @@
+$navSize: 205px;
+.nav__brand--size{
+    width: $navSize;
+}
+.nav__brandEs--size{
+    width: $navSize - 50px;
+}
+.nav--z-index{
+    z-index: 100;
+}
+.nav__sidemenu--size{
+    width: 120px;
+}
+.nav__lang--opacity{
+    opacity: 0.7;
+}
+.nav__stories--size{
+    max-height: 75vh;
+    overflow: auto;
+}
+@media only screen and (min-width: 576px) {
+    .nav__brand--justify{
+        position: absolute;
+        left: 60px;
+    }
+    .nav__brandEs--size{
+        width: $navSize - 40px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .nav__list--visibility{
+        /*Important necesario para pisar la propiedad Visibility setteada por Bootstrap mediante JS*/
+        visibility: visible !important;
+        position: unset;
+        transform: unset;
+        width: unset;
+    }
+    .nav__list--size{
+        width: 456px;
+    }
+    .nav__stories--size{
+        overflow: unset;
+    }
+}

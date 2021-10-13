@@ -1,0 +1,74 @@
+.logo--size{
+    width: 50px;
+}
+.link--color:visited{
+    color: rgba(216, 153, 138, 1);
+}
+.hero{
+    object-fit: cover;
+}
+.hero--size{
+    height: 30vh;
+}
+.hero--fit{
+    @extend .hero;
+    object-position: top;
+}
+.text__paragraph--align{
+    text-align: justify;
+}
+.card--border{
+    border-radius: 30px 0;
+}
+.img--border{
+    border-radius: 35px 0 30px 0;
+}
+.break--size{
+    width: 90vw;
+    height: 3px;
+    font-size: 2px;
+}
+.backTop--position{
+    bottom: 75px;
+    right: 10px;
+}
+.backTop--opacity{
+    opacity: 0.7;
+}
+@media only screen and (min-width: 576px) {
+    .w-sm-75{
+        width: 75%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .text--size{
+        max-width: 65ch;
+    }
+    .break--size{
+        width: 75vw;
+    }
+    .w-md-100{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .w-lg-50{
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .break--size{
+        width: 50vw;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .break--size{
+        width: 45vw;
+    }
+    .w-xxl-25{
+        width: 40%;
+    }
+    .w-xxl-75{
+        width: 75%;
+    }
+}

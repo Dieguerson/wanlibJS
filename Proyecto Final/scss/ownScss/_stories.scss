@@ -1,0 +1,19 @@
+.card--size{
+    width: 16.5vw;
+    min-width: 142px;
+}
+.card__img--size{
+    width: 16.3vw;
+    min-width: 140px;
+}
+.card--transform:hover{
+    transform: scale(1.02, 1.02) translate(10px, -10px);
+}
+.stories__name--display{
+    display: none;
+}
+@media only screen and (min-width: 1800px) {
+    .stories__name--display{
+        display: inline;
+    }
+}

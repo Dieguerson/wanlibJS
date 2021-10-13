@@ -1,0 +1,15 @@
+.error__img--size{
+    max-width: 80vw;
+    max-height: 50vh;
+}
+.error__break--size{
+    width: 90%;
+    height: 3px;
+    font-size: 2px;
+}
+@media only screen and (min-width: 576px){
+    .error__img--size{
+        width: unset;
+        max-height: 60vh;
+    }
+}

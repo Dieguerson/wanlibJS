@@ -1,0 +1,118 @@
+$btnWidth: 60px;
+$btnHeight: 30px;
+
+@mixin btnSize{
+    width: $btnWidth;
+    height: $btnHeight;
+}
+.form__btn--size{
+    @include btnSize;
+}
+.button--border{
+    border-radius: 10px 0;
+}
+.contact__fieldset--border{
+    border-radius: 30px 0;
+}
+.contact__input--color:-webkit-autofill,
+.contact__input--color:-webkit-autofill:hover,
+.contact__input--color:-webkit-autofill:focus,
+.contact__input--color:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: rgba(191, 68, 78, 1) !important;
+    caret-color: rgba(191, 68, 78, 1);
+}
+.contact__cardRadio--size{
+    width: 222px;
+    height: 135px;
+}
+.contact__cardRadio--bg{
+	background-position: right;
+}
+.contact__cardRadioElement {
+    display: none;
+}
+.contact__cardRadio:hover {
+    cursor: pointer;
+}
+.contact__cardRadioElement:checked + .contact__cardRadio {
+	background: linear-gradient(to left, rgba(38, 38, 38, 1) 50%, rgba(191, 68, 78, 1) 50%);
+	background-position: left;
+	background-size: 200%;
+    transition: .2s ease-out;
+}
+.contact__cardCheck--size{
+    width: 222px;
+    height: 170px;
+}
+.contact__cardCheck--border{
+    position: relative;
+    top: 5px;
+    right: -95px;
+    z-index: 30000;
+}
+.conact__cardCheckLabel {
+	height: 300px;
+	z-index: 100;
+	cursor: pointer;
+}
+.contact__cardCheckBody{
+    top: -24px;
+}
+.contact__cardCheck .contact__cardCheckBody {
+	z-index: 2;
+}
+.contact__cardCheck .contact__cardCheck--bg,
+.contact__cardCheck .contact__cardCheckToggle {
+	width: 36px;
+	height: 36px;
+	top: 10px;
+	left: 10px;
+}
+.contact__cardCheck .contact__cardCheck--bg {
+	-webkit-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	-webkit-transform:scale(1);
+	transform:scale(1);
+}
+.contact__cardCheck .contact__cardCheckToggle .contact__cardCheckCross {
+	width: 20px;
+	margin-left: -10px;
+	height: 1px;
+	-webkit-transition: all .4s ease-out;
+	transition: all .4s ease-out;
+	-webkit-transform: rotate(-270deg);
+	transform: rotate(-270deg);
+}
+.contact__cardCheck .contact__cardCheckToggle .contact__cardCheckCross:first-child {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.contact__cardCheck .contact__cardCheckCancel {
+	bottom: -80px;
+	width: 100%;
+	-webkit-transition: all .3s cubic-bezier(0.5, -0.8, 0.5, 1.8);
+	transition: all .3s cubic-bezier(0.5, -0.8, 0.5, 1.8);
+}
+.contact__cardCheck .contact__cardCheckInput[type=checkbox]:checked ~ .contact__cardCheckBody .contact__cardCheckToggle .contact__cardCheckCross {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.contact__cardCheck .contact__cardCheckInput[type=checkbox]:checked ~ .contact__cardCheckBody .contact__cardCheckToggle .contact__cardCheckCross:first-child {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.contact__cardCheck .contact__cardCheckInput[type=checkbox]:checked ~ .contact__cardCheck--bg {
+	-webkit-transform:scale(25);
+	transform:scale(25);
+}
+.contact__cardCheck .contact__cardCheckInput[type=checkbox]:checked ~ .contact__cardCheckBody .contact__cardCheckCancel {
+	bottom: -35px;
+}
+
+
+
+
+
+
+

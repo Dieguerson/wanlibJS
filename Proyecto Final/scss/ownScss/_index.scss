@@ -1,0 +1,11 @@
+.intro__img--size{
+    width: 15vw;
+}
+.index__img--border{
+    border-radius: 15px 0;
+}
+@media only screen and (min-width: 576px) {
+    .index__img--border{
+        border-radius: 30px 0;
+    }
+}
