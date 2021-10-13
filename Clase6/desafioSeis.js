@@ -14,8 +14,8 @@ function die(ammount , faces){
 
 //Ordenador por Burbujeo
 function hiLo(data) {
-    for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data.length; j++) {
+    for (let i = 0 ; i < data.length ; i++) {
+        for (let j = 0 ; j < data.length ; j++) {
             if (data[j] < data[j + 1]) {
                 let temp = data[j];
                 data[j] = data[j + 1];
@@ -137,9 +137,9 @@ class character{
         console.log("Constitution: " + this.constitution);
     }
     getModifiers(){
-        let strength = Math.floor((STR - 10)/2);
-        let dexterity = Math.floor((DEX - 10)/2);
-        let constitution = Math.floor((CON - 10)/2);
+        let strength = Math.floor((STR - 10) / 2);
+        let dexterity = Math.floor((DEX - 10) / 2);
+        let constitution = Math.floor((CON - 10) / 2);
         console.log("Their Strength Modifier is: " + strength);
         console.log("Their Dexterity Modifier is: " + dexterity);
         console.log("Their Constitution Modifier is: " + constitution);
