@@ -1,0 +1,25 @@
+{
+  "name": "the_wandering_librarian",
+  "version": "1.0.0",
+  "description": "A character story writing site",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dieguerson/wanlibJS.git"
+  },
+  "author": "Diego Gabrielli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dieguerson/wanlibJS/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss ProyectoFinal/scss/main.scss ProyectoFinal/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm  run build-css\""
+},
+  "homepage": "https://github.com/Dieguerson/wanlibJS#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.13"
+  }
+}

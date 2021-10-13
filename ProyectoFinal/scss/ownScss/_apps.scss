@@ -1,0 +1,16 @@
+.apps__card--size{
+    width: 6rem; 
+    height: 80px;
+}
+.card--transform:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+@media only screen and (min-width: 976px){
+    .apps__footer--position{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
