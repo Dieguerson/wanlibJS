@@ -7664,6 +7664,15 @@ table {
   transform: scale(1.1);
   cursor: pointer; }
 
+.modal--depth {
+  z-index: 100; }
+
+.modal__background--color {
+  background-color: rgba(38, 38, 38, 0.4); }
+
+.modal__content--margin {
+  margin-top: 80px; }
+
 @media only screen and (min-width: 976px) {
   .apps__footer--position {
     position: fixed;

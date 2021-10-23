@@ -123,6 +123,29 @@
                 </fieldset>
             </article>
         </section>
+        <section id="modal" class="position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
+            <article class="border border-2 mx-auto py-3 modal__content--margin bg-success card--border">
+                <form class="row justify-content-center mx-auto px-3 p-md-0 w-100">
+                    <fieldset>
+                        <legend class="fw-bold p-1 pt-0">Log In</legend>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="Name" id="name" placeholder="Grimund Bronzeheart" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="name" class="text-start text-primary ps-3">User Name</label>
+                            </div>
+                            <div class="form-floating mb-2">
+                                <input type="password" name="pass" id="pass" placeholder="grimund@dwarfmail.com" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="pass" class="text-start text-primary ps-3">Pasword</label>
+                            </div>
+                        </legend>
+                    </fieldset>
+                    <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
+                    <input class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
+                </form>
+                <div class="d-flex justify-content-end mt-3">
+                    <input id="closeBtn" class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Close" onclick="closeModal()">
+                </div>
+            </article>
+        </section>
         <a href="#top" class="position-fixed text-dark fs-1 backTop--position"><i class="bi bi-arrow-up-circle-fill backTop--opacity"></i></a>
         <footer class="d-flex flex-wrap justify-content-between align-items-center bg-dark text-primary p-1 apps__footer--position">
             <a href="index.html"><img src="img/wax.svg" alt="Logo" class="logo--size"></a>

@@ -2,13 +2,6 @@
 let result = [] , STR , DEX , CON , selectedRace , characteristics , names , charCol=[];
 // -END- Variables globales al proceso
 
-//Admin Modal
-function closeModal(){
-    let close = document.getElementById("modal");
-    close.style.display = "none";
-}
-// -END- Admin Modal
-/*
 //Simulador de dados
 function die(ammount , faces){
     result = [];
@@ -190,4 +183,4 @@ function creation (){
 // -END- Creation: Génesis del personaje
 
 creation();
-console.log(charCol);*/
+console.log(charCol);
