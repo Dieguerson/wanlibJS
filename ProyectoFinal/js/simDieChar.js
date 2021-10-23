@@ -1,11 +1,13 @@
 //Variables globales al proceso
-let result = [] , STR , DEX , CON , selectedRace , characteristics , names , charCol=[];
+let result = [] , STR , DEX , CON , selectedRace , characteristics , names , charCol=[], modal = document.getElementById("modal");
 // -END- Variables globales al proceso
 
 //Admin Modal
 function closeModal(){
-    let close = document.getElementById("modal");
-    close.style.display = "none";
+    modal.style.display = "none";
+}
+function openModal(){
+    modal.style.setProperty("display", "block", "important");
 }
 // -END- Admin Modal
 /*
