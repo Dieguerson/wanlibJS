@@ -15,6 +15,20 @@
 .modal__content--margin{
     margin-top: 80px;
 }
+.die__results--length{
+    max-width: 65ch;
+}
+.logIn--cursor{
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
 @media only screen and (min-width: 976px){
     .apps__footer--position{
         position: fixed;

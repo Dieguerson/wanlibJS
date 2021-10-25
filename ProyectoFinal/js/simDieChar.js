@@ -9,18 +9,106 @@ function closeModal(){
 function openModal(){
     modal.style.setProperty("display", "block", "important");
 }
+function access(){
+    let userName = document.getElementById("userName");
+    let password = document.getElementById("pass");
+    if (userName.value == "Admin" && password.value == "Pr0baNd0"){
+        let logIn = document.getElementById("logIn");
+        let raceCreator = document.getElementById("raceCreator");
+        logIn.style.display = "none";
+        raceCreator.style.setProperty("display", "block", "important");
+    }
+}
 // -END- Admin Modal
-/*
+
 //Simulador de dados
-function die(ammount , faces){
+function die(faces){
+    let ammount = document.getElementById("ammount")
     result = [];
-    for (let i = 0 ; i < ammount ; i++){
+    for (let i = 0 ; i < ammount.value ; i++){
         let roller = Math.floor(faces * Math.random()) + 1;
         result.push (roller);
     }
+    console.log(result);
 }
 // -END- Simulador de dados
+//Impresora de resultados
 
+function printer(){
+    let paragraph = document.getElementById("results");
+    paragraph.innerText = "[" + result + "]";
+    paragraph.style.setProperty("display", "block", "important");
+}
+// -END- Impresora de resultados
+
+//Razas de D&D
+class newRace{
+    constructor (raceName , strMod , dexMod , conMod , raceSize, raceCharacteristics){
+        this.raceName = raceName;
+        this.strMod = strMod;
+        this.dexMod = dexMod;
+        this.conMod = conMod;
+        this.raceSize = raceSize;
+        this.raceCharacteristics = raceCharacteristics;
+    }
+}
+function raceCreator(){
+    let raceName = document.getElementById("raceName").value;
+    let strMod = document.getElementById("strMod").value;
+    let dexMod = document.getElementById("dexMod").value;
+    let conMod = document.getElementById("conMod").value;
+    let raceSize = document.getElementById("size").value;
+    let raceCharacteristics = document.getElementById("characteristics").value;
+    let rcCrtr = document.getElementById("raceCreator");
+    let raceMsj = document.createElement("p");
+    const race = JSON.stringify(new newRace(raceName , strMod , dexMod , conMod , raceSize , raceCharacteristics));
+    localStorage.setItem(raceName , race);
+    raceMsj.innerText = "Congratulations! The " + raceName + " race has been created!";
+    rcCrtr.appendChild(raceMsj);
+    raceMsj.className = "w-100 text-center fs-4 mt-2";
+}
+function raceList(){
+    for (let i = 0; i < localStorage.length ; i++){
+        let raceList = document.getElementById("race");
+        let raceItem = document.createElement("option");
+        let raceData = localStorage.key(i);
+        raceItem.value = raceData;
+        raceItem.innerText = raceData;
+        raceList.appendChild(raceItem);
+        console.log(raceItem);
+    }
+}
+raceList();
+// -END- Clases de D&D
+
+//Quick Admin
+function quickAdmin(){
+    let quickName;
+    let quickRace;
+    for (let i = 0; i < 3; i++){
+        switch (i){
+            case 0:
+                quickName = "Dwarf";
+                quickRace = JSON.stringify(new newRace("Dwarf" , 0 , 0 , 2 , "4 to 5 feet tall" , "Dwarven Resilience, Dwarven Combat Training"));
+                localStorage.setItem(quickName , quickRace);
+                break;
+            case 1:
+                quickName = "Elf";
+                quickRace = JSON.stringify(new newRace("Elf" , 0 , 2 , 0 , "5 to over 6 feet tall" , "Darkvision, Keen Senses, Fey Ancestry"));
+                localStorage.setItem(quickName , quickRace);
+                break;
+            case 2:
+                quickName = "Human";
+                quickRace = JSON.stringify(new newRace("Human" , 1 , 1 , 1 , "5 to over 6 feet tall" , "None"));
+                localStorage.setItem(quickName , quickRace);
+                break;
+        }
+    }
+    raceList();
+}
+// -END- Quick Admin
+
+/* UNDER CONSTRUCTION!!!
 //Ordenador por Burbujeo
 function hiLo(data) {
     for (let i = 0 ; i < data.length ; i++) {

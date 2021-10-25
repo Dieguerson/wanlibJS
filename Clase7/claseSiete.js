@@ -35,7 +35,7 @@ function borrar(){
 //.removeItem: Permite eliminar items singulares
 //.clear: Vacía el storage
 
-//Pära almacenar objetos en Storage hay que convertirlos en json (JavaScriptObjectNotation), un formato basado en texto plano que toma la sintaxis de
+//Para almacenar objetos en Storage hay que convertirlos en json (JavaScriptObjectNotation), un formato basado en texto plano que toma la sintaxis de
 //los objetos de JS. Se puede usar en forma independiente a JS. Es un string con un formato específico.
 //stringify(): toma un objeto como parametro y lo convierte a texto JSON
 //parse(): toma texto JSON y lo convierte a objeto de JS
