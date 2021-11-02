@@ -66,7 +66,6 @@ function dieFace(e){
         default:
             break;
     }
-    console.log(faceAmm);
     return faceAmm
 }
 function die (dieNum , faceNum){
@@ -150,7 +149,6 @@ let characteristics = "";
 function raceSelect(raceChoice){
     let storedRace = localStorage.getItem(raceChoice);
     let ussableRace = JSON.parse(storedRace);
-    console.log(ussableRace);
     STR = STR + parseInt(ussableRace.strMod);
     DEX = DEX + parseInt(ussableRace.dexMod);
     CON = CON + parseInt(ussableRace.conMod);
@@ -241,14 +239,10 @@ function creation (){
     DEX = 0;
     CON = 0;
     stats();
-    console.log ("You Rolled These Stats:");
-    console.log("Strength: " + STR);
-    console.log("Dexterity: " + DEX);
-    console.log("Constitution: " + CON);
     raceSelect(raceLst.value);
     const hero = new character(names, selectedRace, STR, DEX, CON , selectedRaceSize , characteristics);
     charCol.push(hero);
-    console.log(charCol);
+    chrLstCrtr();
 }
 // -END- Creation: Génesis del personaje
 
@@ -272,8 +266,6 @@ class character{
 //Character List
 let charCol=[]
 let charList = document.getElementById("charList");
-let chrLstUp = document.getElementById("chrLstUp");
-chrLstUp.addEventListener("click" , chrLstCrtr);
 function chrLstCrtr(){
     charList.classList.replace("d-none" , "d-block");
     charList.innerHTML = `<h2 class="text-center fw-bold w-100 m-0 p-0">Character List</h2>`;
