@@ -1,47 +1,112 @@
-//Variables globales al proceso
-let result = [] , STR , DEX , CON , selectedRace , characteristics , names , charCol=[], modal = document.getElementById("modal");
-// -END- Variables globales al proceso
-
 //Admin Modal
-function closeModal(){
-    modal.style.display = "none";
+let openModal = document.getElementById("openModal");
+openModal.addEventListener("click", onModal);
+let closeModal = document.getElementById("closeModal");
+closeModal.addEventListener("click", offModal);
+let modal = document.getElementById("modal");
+function onModal(){
+    modal.classList.replace("d-none" , "d-block");
 }
-function openModal(){
-    modal.style.setProperty("display", "block", "important");
+function offModal(){
+    modal.classList.replace("d-block" , "d-none");
 }
+let userName = document.getElementById("userName");
+let password = document.getElementById("pass");
+let logSend = document.getElementById("logSend");
+logSend.addEventListener("click" , access);
 function access(){
-    let userName = document.getElementById("userName");
-    let password = document.getElementById("pass");
+    let logIn = document.getElementById("logIn");
+    let raceCreator = document.getElementById("raceCreator");
     if (userName.value == "Admin" && password.value == "Pr0baNd0"){
-        let logIn = document.getElementById("logIn");
-        let raceCreator = document.getElementById("raceCreator");
         logIn.style.display = "none";
         raceCreator.style.setProperty("display", "block", "important");
-    }
+    } else{
+        let logError = document.createElement("p");
+        logError.innerText = "That's not a valid username or password.";
+        logError.className = "w-100 text-center fs-4 mt-2";
+        logIn.appendChild(logError);
+        setTimeout(function(){logIn.removeChild(logIn.lastChild);},2000);
+    } 
 }
 // -END- Admin Modal
 
 //Simulador de dados
-function die(faces){
-    let ammount = document.getElementById("ammount")
+let result = []; 
+let paragraph = document.getElementById("results");
+let ammount = document.getElementById("ammount");
+let dieSim = document.querySelectorAll(".dieSim");
+for (let roll of dieSim){
+    roll.addEventListener("click" , dieFace);
+    roll.addEventListener("click" , dieRoller);
+}
+let faceAmm = 0;
+function dieFace(e){
+    switch (e.target.innerText){
+        case "d4":
+            faceAmm = 4;
+            break;
+        case "d6":
+            faceAmm = 6;
+            break;
+        case "d8":
+            faceAmm = 8;
+            break;
+        case "d10":
+            faceAmm = 10;
+            break;
+        case "d12":
+            faceAmm = 12;
+            break;
+        case "d20":
+            faceAmm = 20;
+            break;
+        case "d100":
+            faceAmm = 100;
+            break;
+        default:
+            break;
+    }
+    console.log(faceAmm);
+    return faceAmm
+}
+function die (dieNum , faceNum){
     result = [];
-    for (let i = 0 ; i < ammount.value ; i++){
-        let roller = Math.floor(faces * Math.random()) + 1;
+    for (let i = 0 ; i < dieNum ; i++){
+        let roller = Math.floor(faceNum * Math.random()) + 1;
         result.push (roller);
     }
-    console.log(result);
+}
+function dieRoller (e){
+    die (ammount.value , faceAmm);
+    printer();
 }
 // -END- Simulador de dados
-//Impresora de resultados
 
+//Impresora de resultados
 function printer(){
-    let paragraph = document.getElementById("results");
-    paragraph.innerText = "[" + result + "]";
+    paragraph.innerText = "[" + hiLo(result) + "]";
     paragraph.style.setProperty("display", "block", "important");
 }
 // -END- Impresora de resultados
 
+//Ordenador por Burbujeo
+function hiLo(data) {
+    for (let i = 0 ; i < data.length ; i++) {
+        for (let j = 0 ; j < data.length ; j++) {
+            if (data[j] < data[j + 1]) {
+                let temp = data[j];
+                data[j] = data[j + 1];
+                data[j + 1] = temp;
+            }
+        }
+    }
+    return result = data;
+}
+// -END- Ordenador por Burbujeo
+
 //Razas de D&D
+let raceSend = document.getElementById("raceSend");
+raceSend.addEventListener("click" , raceCreator);
 class newRace{
     constructor (raceName , strMod , dexMod , conMod , raceSize, raceCharacteristics){
         this.raceName = raceName;
@@ -66,22 +131,40 @@ function raceCreator(){
     raceMsj.innerText = "Congratulations! The " + raceName + " race has been created!";
     rcCrtr.appendChild(raceMsj);
     raceMsj.className = "w-100 text-center fs-4 mt-2";
+    setTimeout(function(){rcCrtr.removeChild(rcCrtr.lastChild);},2000);
 }
+let raceLst = document.getElementById("race");
 function raceList(){
     for (let i = 0; i < localStorage.length ; i++){
-        let raceList = document.getElementById("race");
         let raceItem = document.createElement("option");
         let raceData = localStorage.key(i);
         raceItem.value = raceData;
         raceItem.innerText = raceData;
-        raceList.appendChild(raceItem);
-        console.log(raceItem);
+        raceLst.appendChild(raceItem);
     }
+}
+let size = "";
+let selectedRace = "";
+let selectedRaceSize = "";
+let characteristics = "";
+function raceSelect(raceChoice){
+    let storedRace = localStorage.getItem(raceChoice);
+    let ussableRace = JSON.parse(storedRace);
+    console.log(ussableRace);
+    STR = STR + ussableRace.strMod;
+    DEX = DEX + ussableRace.dexMod;
+    CON = CON + ussableRace.conMod;
+    characteristics = ussableRace.raceCharacteristics;
+    size = ussableRace.raceSize;
+    selectedRace = ussableRace.raceName;
+    selectedRaceSize = ussableRace.raceSize;
 }
 raceList();
 // -END- Clases de D&D
 
 //Quick Admin
+let qckAdm = document.getElementById("qckAdm");
+qckAdm.addEventListener("click" , quickAdmin);
 function quickAdmin(){
     let quickName;
     let quickRace;
@@ -104,52 +187,11 @@ function quickAdmin(){
                 break;
         }
     }
-    raceList();
 }
 // -END- Quick Admin
 
-/* UNDER CONSTRUCTION!!!
-//Ordenador por Burbujeo
-function hiLo(data) {
-    for (let i = 0 ; i < data.length ; i++) {
-        for (let j = 0 ; j < data.length ; j++) {
-            if (data[j] < data[j + 1]) {
-                let temp = data[j];
-                data[j] = data[j + 1];
-                data[j + 1] = temp;
-            }
-        }
-    }
-    result = data;
-}
-// -END- Ordenador por Burbujeo
-
-//Razas de D&D
-const dwarf = {abScIn: 2 , size: "4 to 5 feet tall" , characteristics: "Darkvision, Dwarven Resilience, Dwarven Combat Training"};
-const elf = {abScIn: 2 , size: "5 to over 6 feet tall" , characteristics: "Darkvision, Keen Senses, Fey Ancestry"};
-const human = {abScIn: 1 , size: "5 to over 6 feet tall" , characteristics: "None"};
-//raceSelect: Raza del personaje y sus modificadores sobre los Stats
-function raceSelect(){
-    selectedRace = prompt("Choose your race: Dwarf/Elf/Human").toLowerCase();
-    if (selectedRace == "dwarf"){
-        CON = CON + dwarf.abScIn;
-        characteristics = dwarf.characteristics;
-    }else if(selectedRace == "elf"){
-        DEX = DEX + elf.abScIn;
-        characteristics = elf.characteristics;
-    }else if( selectedRace == "human"){
-        STR = STR + human.abScIn;
-        DEX = DEX + human.abScIn;
-        CON = CON + human.abScIn;
-        characteristics = human.characteristics;
-    }else{
-        alert("I'm not familiar with that Race. Let's try Again!");
-        raceSelect();
-    }
-}
-// -END- Clases de D&D
-
 //Stats: Fuerza, Destreza y Constitución del Personaje
+let statRand = document.getElementById("statRand") ;
 function three(){
     die(3 , 6)
     let sum = 0;
@@ -169,115 +211,89 @@ function four(){
     return sum;
 }
 function stats(){
-    let statsMethod = prompt("What method do you prefer for Stats Rolling? 3d6 or 4d6").toLowerCase();
-    if (statsMethod == "3d6"){
+    if (statRand.value == "3d6"){
         do{
-            let attribute = prompt("What Stat Should we Roll for? STR, DEX or CON").toUpperCase();
-            switch (attribute){
-                case "STR":
-                    STR = three();
-                    break;
-                case "DEX":
-                    DEX = three();
-                    break;
-                case "CON":
-                    CON = three();
-                    break;
-                default:
-                    alert("Hm, I'm not Familiar with that Stat. Let's Try Again!");
-            }
+            STR = three();
+            DEX = three();
+            CON = three();
         }while(STR === 0 || DEX === 0 || CON === 0)
-    }else if (statsMethod == "4d6"){
+    }else if (statRand.value == "4d6"){
         do{
-            let attribute = prompt("What Stat Should we Roll for? STR, DEX or CON").toUpperCase();
-            switch (attribute){
-                case "STR":
-                    STR = four();
-                    break;
-                case "DEX":
-                    DEX = four();
-                    break;
-                case "CON":
-                    CON = four();
-                    break;
-                default:
-                    alert("Hm, I'm not Familiar with that Stat. Let's Try Again!");
-            }
+            STR = four();
+            DEX = four();
+            CON = four();
         }while(STR === 0 || DEX === 0 || CON === 0)
     }else{
         alert("I don't Know that Method. Let's Try Again!");
-        stats();
     }
 }
 // -END- Stats: Fuerza, Destreza y Constitución del Personaje
 
+//Creation: Génesis del personaje
+let STR = 0;
+let DEX = 0;
+let CON = 0;
+let chrCrtr = document.getElementById("genesis");
+chrCrtr.addEventListener ("click" , creation);
+function creation (){
+    let names = document.getElementById("charName").value;
+    STR = 0;
+    DEX = 0;
+    CON = 0;
+    stats();
+    console.log ("You Rolled These Stats:");
+    console.log("Strength: " + STR);
+    console.log("Dexterity: " + DEX);
+    console.log("Constitution: " + CON);
+    raceSelect(raceLst.value);
+    const hero = new character(names, selectedRace, STR, DEX, CON , selectedRaceSize , characteristics);
+    charCol.push(hero);
+    console.log(charCol);
+}
+// -END- Creation: Génesis del personaje
+
 //Character: Función constructora de personajes
 class character{
-    constructor (name , selectedRace , STR , DEX , CON , characteristics){
+    constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
         this.namChar = name;
         this.raceChar = selectedRace;
         this.strength = STR;
+        this.strMod = Math.floor((this.strength - 10) / 2);
         this.dexterity = DEX;
+        this.dexMod = Math.floor((this.dexterity - 10) / 2);
         this.constitution = CON;
+        this.conMod = Math.floor((this.constitution - 10) / 2);
+        this.size = size;
         this.characteristics = characteristics;
-    }
-    getName(){
-        console.log("Name: " + this.namChar);
-    }
-    getRace(){
-        console.log(this.namChar + " it's a/an " + this.raceChar)
-    }
-    getStats(){
-        console.log (this.namChar + "'s stats are:");
-        console.log("Strength: " + this.strength);
-        console.log("Dexterity: " + this.dexterity);
-        console.log("Constitution: " + this.constitution);
-    }
-    getModifiers(){
-        let strength = Math.floor((STR - 10) / 2);
-        let dexterity = Math.floor((DEX - 10) / 2);
-        let constitution = Math.floor((CON - 10) / 2);
-        console.log("Their Strength Modifier is: " + strength);
-        console.log("Their Dexterity Modifier is: " + dexterity);
-        console.log("Their Constitution Modifier is: " + constitution);
-    }
-    getCharacteristics(){
-        console.log(this.namChar + " has the following characteristics: " + this.characteristics)
     }
 }
 // -END- Character: Función constructora de personajes
 
-//Creation: Génesis del personaje
-function creation (){
-    let start = prompt("Shall we Begin Building Your Character? Yes/No").toUpperCase();
-    if (start == "YES"){
-        do{
-            STR = 0;
-            DEX = 0;
-            CON = 0;
-            names = prompt("Write Your Character's Name:");
-            stats();
-            console.log ("You Rolled These Stats:");
-            console.log("Strength: " + STR);
-            console.log("Dexterity: " + DEX);
-            console.log("Constitution: " + CON);
-            raceSelect();
-            const hero = new character(names, selectedRace, STR, DEX, CON , characteristics);
-            hero.getName();
-            hero.getRace();
-            hero.getStats();
-            hero.getModifiers();
-            hero.getCharacteristics();
-            console.log(hero);
-            charCol.push(hero);
-            start = prompt("Do You Want to Build Another Character? Yes/No").toUpperCase();
-        }while (start == "YES")
-    }else{
-        alert("We Have All Day Long.");
-        creation();
+//Character List
+let charCol=[]
+let charList = document.getElementById("charList");
+let chrLstUp = document.getElementById("chrLstUp");
+chrLstUp.addEventListener("click" , chrLstCrtr);
+function chrLstCrtr(){
+    charList.classList.replace("d-none" , "d-block");
+    charList.innerHTML = `<h2 class="text-center fw-bold w-100 m-0 p-0">Character List</h2>`;
+    for (let char of charCol){        
+        let charItem = document.createElement("div");
+        charItem.innerHTML = `<h3 class="text-center text-md-start">${char.namChar}</h3>
+                              <p><b>Race: </b>${char.raceChar}</p>
+                              <ul><b>Stats:</b>
+                                  <li class="ms-5"> <b>Strength: </b>${char.strength}</li>
+                                  <li class="ms-5"> <b>Dexterity: </b>${char.dexterity}</li>
+                                  <li class="ms-5"> <b>Constitution: </b>${char.constitution}</li>
+                              </ul>
+                              <ul><b>Stats Modifiers:</b>
+                                  <li class="ms-5"> <b>Strength: </b>${char.strMod}</li>
+                                  <li class="ms-5"> <b>Dexterity: </b>${char.dexMod}</li>
+                                  <li class="ms-5"> <b>Constitution: </b>${char.conMod}</li>
+                              </ul>
+                              <p><b>Size: </b>${char.size}</p>
+                              <p><b>Characteristics: </b>${char.characteristics}</p>`;
+        charList.appendChild(charItem);
     }
 }
-// -END- Creation: Génesis del personaje
-
-creation();
-console.log(charCol);*/
+// -END- Character List

@@ -13,7 +13,7 @@
     <body class="bg-secondary">
         <a href="" id="top"></a>
         <header class="position-sticky top-0 nav--z-index">
-            <nav class=" container-fluid navbar navbar-expand-lg bg-dark p-0">
+            <nav class="ontainer-fluid navbar navbar-expand-lg bg-dark p-0">
                 <div class="container-fluid p-2 pb-1">
                     <div class="container-fluid d-flex justify-content-between p-0 m-0">
                         <a href="index.html"><img src="img/wax.svg" class="logo--size" alt="Logo"></a>
@@ -66,7 +66,7 @@
                                 <a class="nav-link active link--color" href="contact.html">Contact</a>
                             </li>
                             <li>
-                                <i class="bi bi-person-circle fs-3 text-primary logIn--cursor" onclick="openModal()"></i>
+                                <i class="bi bi-person-circle fs-3 text-primary logIn--cursor" id="openModal"></i>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link d-none d-lg-block" href="appsEs.html">
@@ -82,7 +82,7 @@
             </div>
         </header>
         <h1 class="m-3">Apps</h1>
-        <section class="d-flex flex-grow-1 flex-column justify-content-start container pb-4 vw-100 vh-100">
+        <section class="d-flex flex-column justify-content-between container pb-4">
             <article class="row justify-content-center w-md-100 w-xxl-75 mx-auto pt-4 px-0">
                 <h2 class="text-center fw-bold w-100 m-0 p-0">Dice Simulator</h2>
                 <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 px-2 py-1 card--transform card--border apps__card--size">
@@ -90,25 +90,25 @@
                     <input class="h-50 w-100 text-center mx-auto mb-2 mt-0 bg-dark form-control text-secondary bg-dark border-secondary shadow
                     contact__cursor--color contact__input--color contact__input--color" type="number" name="ammount" value="1" id="ammount">
                 </div>
-                <div onclick="die(4); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d4</h5>
                 </div>
-                <div onclick="die(6); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d6</h5>
                 </div>
-                <div onclick="die(8); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d8</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 onclick="die(10); printer()" class="card-title w-100 m-auto">d10</h5>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d10</h5>
                 </div>
-                <div onclick="die(12); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d12</h5>
                 </div>
-                <div onclick="die(20); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d20</h5>
                 </div>
-                <div onclick="die(100); printer()" class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d100</h5>
                 </div>
                 <p class="w-100 text-center fs-4 mt-2">Results</p>
@@ -116,19 +116,32 @@
             </article>
             <article class="row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25">
                 <h2 class="text-center fw-bold w-100 m-0 p-0">Character Creator</h2>
-                <button onclick="quickAdmin()">Quick Admin</button>
-                <fieldset class="text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
-                    <div class="d-flex flex-column">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
-                            <label for="name" class="text-start text-primary">Character's Name:</label>
+                <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-50 button--border" id="qckAdm">Quick Admin</button>
+                <form action="" class="text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                    <fieldset>
+                        <div class="d-flex flex-column">
+                            <div class="form-floating mb-3">
+                                <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="name" class="text-start text-primary">Character's Name:</label>
+                            </div>
+                            <label for="statRand" class="text-start fs-5 fw-bold ms-n1 mb-1">Stat Randomizer:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
+                                <option value="4d6">4d6 Method</option>
+                                <option value="3d6">3d6 Method</option>
+                            </select>
+                            <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Race:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
+                                <option value="None"></option>
+                            </select>
                         </div>
-                        <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Race:</label>
-                        <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
-                            <option value="None"></option>
-                        </select>
-                    </div>
-                </fieldset>
+                    </fieldset>
+                    <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
+                    <input id="genesis" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Create">
+                </form>
+                    <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-75 button--border" id="chrLstUp">Show/Update Character List</button>
+            </article>
+            <article class="d-none row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25" id="charList">
+                <h2 class="text-center fw-bold w-100 m-0 p-0">Character List</h2>
             </article>
         </section>
         <section id="modal" class="d-none position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
@@ -147,7 +160,7 @@
                         </legend>
                     </fieldset>
                     <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
-                    <input onclick="access()" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
+                    <input id="logSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
                 </form>
                 <form id="raceCreator" class="d-none row justify-content-center mx-auto px-3 p-md-0 w-100">
                     <fieldset class="text-center">
@@ -178,11 +191,11 @@
                             </div>
                         </legend>
                         <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
-                        <input onclick="raceCreator()" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
+                        <input id="raceSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
                     </fieldset>
                 </form>
                 <div class="d-flex justify-content-end mt-3">
-                    <input id="closeBtn" class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Close" onclick="closeModal()">
+                    <input class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Close" id="closeModal">
                 </div>
             </article>
         </section>
