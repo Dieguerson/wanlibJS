@@ -119,9 +119,9 @@ class newRace{
 }
 function raceCreator(){
     let raceName = document.getElementById("raceName").value;
-    let strMod = parseInt(document.getElementById("strMod").value);
-    let dexMod = parseInt(document.getElementById("dexMod").value);
-    let conMod = parseInt(document.getElementById("conMod").value);
+    let strMod =document.getElementById("strMod").value;
+    let dexMod =document.getElementById("dexMod").value;
+    let conMod =document.getElementById("conMod").value;
     let raceSize = document.getElementById("size").value;
     let raceCharacteristics = document.getElementById("characteristics").value;
     let rcCrtr = document.getElementById("raceCreator");
@@ -151,9 +151,9 @@ function raceSelect(raceChoice){
     let storedRace = localStorage.getItem(raceChoice);
     let ussableRace = JSON.parse(storedRace);
     console.log(ussableRace);
-    STR = STR + ussableRace.strMod;
-    DEX = DEX + ussableRace.dexMod;
-    CON = CON + ussableRace.conMod;
+    STR = STR + parseInt(ussableRace.strMod);
+    DEX = DEX + parseInt(ussableRace.dexMod);
+    CON = CON + parseInt(ussableRace.conMod);
     characteristics = ussableRace.raceCharacteristics;
     size = ussableRace.raceSize;
     selectedRace = ussableRace.raceName;
