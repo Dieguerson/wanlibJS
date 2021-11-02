@@ -119,9 +119,9 @@ class newRace{
 }
 function raceCreator(){
     let raceName = document.getElementById("raceName").value;
-    let strMod = document.getElementById("strMod").value;
-    let dexMod = document.getElementById("dexMod").value;
-    let conMod = document.getElementById("conMod").value;
+    let strMod = parseInt(document.getElementById("strMod").value);
+    let dexMod = parseInt(document.getElementById("dexMod").value);
+    let conMod = parseInt(document.getElementById("conMod").value);
     let raceSize = document.getElementById("size").value;
     let raceCharacteristics = document.getElementById("characteristics").value;
     let rcCrtr = document.getElementById("raceCreator");
