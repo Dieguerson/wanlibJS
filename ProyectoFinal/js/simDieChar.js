@@ -28,7 +28,6 @@ function access(){
         setTimeout(function(){logIn.removeChild(logIn.lastChild);},2000);
     } 
 }
-// -END- Admin Modal
 
 //Simulador de dados
 let result = []; 
@@ -79,14 +78,12 @@ function dieRoller (e){
     die (ammount.value , faceAmm);
     printer();
 }
-// -END- Simulador de dados
 
 //Impresora de resultados
 function printer(){
     paragraph.innerText = "[" + hiLo(result) + "]";
     paragraph.style.setProperty("display", "block", "important");
 }
-// -END- Impresora de resultados
 
 //Ordenador por Burbujeo
 function hiLo(data) {
@@ -101,7 +98,6 @@ function hiLo(data) {
     }
     return result = data;
 }
-// -END- Ordenador por Burbujeo
 
 //Razas de D&D
 let raceSend = document.getElementById("raceSend");
@@ -158,7 +154,6 @@ function raceSelect(raceChoice){
     selectedRaceSize = ussableRace.raceSize;
 }
 raceList();
-// -END- Clases de D&D
 
 //Quick Admin
 let qckAdm = document.getElementById("qckAdm");
@@ -186,7 +181,6 @@ function quickAdmin(){
         }
     }
 }
-// -END- Quick Admin
 
 //Stats: Fuerza, Destreza y Constitución del Personaje
 let statRand = document.getElementById("statRand") ;
@@ -225,7 +219,22 @@ function stats(){
         alert("I don't Know that Method. Let's Try Again!");
     }
 }
-// -END- Stats: Fuerza, Destreza y Constitución del Personaje
+
+//Character: Función constructora de personajes
+class character{
+    constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
+        this.namChar = name;
+        this.raceChar = selectedRace;
+        this.strength = STR;
+        this.strMod = Math.floor((this.strength - 10) / 2);
+        this.dexterity = DEX;
+        this.dexMod = Math.floor((this.dexterity - 10) / 2);
+        this.constitution = CON;
+        this.conMod = Math.floor((this.constitution - 10) / 2);
+        this.size = size;
+        this.characteristics = characteristics;
+    }
+}
 
 //Creation: Génesis del personaje
 let STR = 0;
@@ -243,27 +252,28 @@ function creation (){
     const hero = new character(names, selectedRace, STR, DEX, CON , selectedRaceSize , characteristics);
     charCol.push(hero);
     chrLstCrtr();
+    let genesisMsj = document.createElement("section");
+    genesisMsj.className = "d-block position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth"
+    genesisMsj.innerHTML = `<article class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border">
+                                    <h3 class="text-center fw-bold w-100 m-0 px-3">Congratulations!</h3>
+                                    <p class="text-center fw-bold w-100 m-0 px-3">Your Character Has Been Created!</p>
+                            </article>`;
+    document.body.appendChild(genesisMsj);
+    setTimeout(function(){document.body.removeChild(document.body.lastChild);},1250);
 }
-// -END- Creation: Génesis del personaje
-
-//Character: Función constructora de personajes
-class character{
-    constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
-        this.namChar = name;
-        this.raceChar = selectedRace;
-        this.strength = STR;
-        this.strMod = Math.floor((this.strength - 10) / 2);
-        this.dexterity = DEX;
-        this.dexMod = Math.floor((this.dexterity - 10) / 2);
-        this.constitution = CON;
-        this.conMod = Math.floor((this.constitution - 10) / 2);
-        this.size = size;
-        this.characteristics = characteristics;
-    }
-}
-// -END- Character: Función constructora de personajes
 
 //Character List
+let charModal = document.getElementById("charModal");
+let openCharModal = document.getElementById("openCharModal");
+openCharModal.addEventListener("click" , onCharModal);
+let closeCharModal = document.getElementById("closeCharModal");
+closeCharModal.addEventListener("click" , offCharModal);
+function onCharModal(){
+    charModal.classList.replace("d-none" , "d-block");
+}
+function offCharModal(){
+    charModal.classList.replace("d-block" , "d-none");
+}
 let charCol=[]
 let charList = document.getElementById("charList");
 function chrLstCrtr(){
@@ -288,4 +298,3 @@ function chrLstCrtr(){
         charList.appendChild(charItem);
     }
 }
-// -END- Character List

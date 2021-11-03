@@ -65,6 +65,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active link--color" href="contacto.html">Contacto</a>
                             </li>
+                            <li>
+                                <i class="bi bi-person-circle fs-3 text-primary logIn--cursor" id="openModal"></i>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link d-none d-lg-block" href="apps.html">
                                     <img class="rounded" src="img/ingles.jpg" alt="English">
@@ -79,52 +82,132 @@
             </div>
         </header>
         <h1 class="m-3">Apps</h1>
-        <section class="container pb-4 vw-100">
-            <article class="row justify-content-center w-md-100 w-xxl-75 m-auto pt-4">
+        <section class="d-flex flex-column justify-content-between container pb-4">
+            <article class="row justify-content-center w-md-100 w-xxl-75 mx-auto pt-4 px-0">
                 <h2 class="text-center fw-bold w-100 m-0 p-0">Simulador de Dados</h2>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 px-2 py-1 card--transform card--border apps__card--size">
+                    <h5 class="card-title m-auto mb-1 fs-6">Cantidad</h5>
+                    <input class="h-50 w-100 text-center mx-auto mb-2 mt-0 bg-dark form-control text-secondary bg-dark border-secondary shadow
+                    contact__cursor--color contact__input--color contact__input--color" type="number" name="ammount" value="1" id="ammount">
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d4</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d6</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d8</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d10</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d12</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d20</h5>
                 </div>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
                     <h5 class="card-title w-100 m-auto">d100</h5>
                 </div>
+                <p class="w-100 text-center fs-4 mt-2">Resultados</p>
+                <p id="results" class="d-none fs-4 mt-2 text-center text-break die__results--length"></p>
             </article>
-            <article class="row justify-content-end mx-auto px-3 mt-5 w-sm-75 w-lg-50 w-xxl-25">
-                <h2 class="text-center fw-bold w-100 m-0 p-0">Creador de Personaje</h2>
-                <fieldset class="text-center border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
-                    <div class="d-flex flex-column">
-                        <div class="form-floating mb-3">
-                            <input type="text" name="Name" id="name" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
-                            <label for="name" class="text-start text-primary">Nombre del Personaje:</label>
+            <article class="row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25">
+                <h2 class="text-center fw-bold w-100 m-0 p-0">Creador de Personajes</h2>
+                <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-50 button--border" id="qckAdm">Quick Admin</button>
+                <form action="" class="d-flex flex-wrap border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                    <fieldset class="w-100">
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="name" class="text-start text-primary">Nombre del Personaje:</label>
+                            </div>
+                            <label for="statRand" class="text-start fs-5 fw-bold ms-n1 mb-1">Randomizador de Stats:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
+                                <option value="4d6">Método de 4d6</option>
+                                <option value="3d6">Método de 3d6</option>
+                            </select>
+                            <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Raza:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
+                                <option value="None"></option>
+                            </select>
                         </div>
-                        <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Raza:</label>
-                        <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
-                            <option value="None"></option>
-                            <option value="Dwarf">Enano</option>
-                            <option value="Elf">Elfo</option>
-                            <option value="Human">Humano</option>
-                        </select>
-                    </div>
-                </fieldset>
+                    </fieldset>
+                    <input id="openCharModal" class="btn btn-dark text-primary fw-bold m-2 p-0 px-1 button--border" type="button" value="Lista de Personajes">
+                    <input class="btn btn-primary text-dark fw-bold shadow-none ms-auto m-2 p-0 form__btn--size button--border" type="reset" value="Borrar">
+                    <input id="genesis" class="btn btn-dark text-primary shadow-none fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Crear">
+                </form>
+            </article>
+        </section>
+        <section id="modal" class="d-none position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
+            <article class="border border-2 mx-auto py-3 modal__content--margin bg-success card--border w-sm-75 w-lg-50 w-xxl-25">
+                <form id="logIn" class="row justify-content-center mx-auto px-3 p-md-0 w-100">
+                    <fieldset>
+                        <legend class="fw-bold p-1 pt-0">Log In</legend>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="name" id="userName" placeholder="Grimund Bronzeheart" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="name" class="text-start text-primary ps-3">Nombre de Usuario</label>
+                            </div>
+                            <div class="form-floating mb-2">
+                                <input type="password" name="pass" id="pass" placeholder="grimund@dwarfmail.com" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="pass" class="text-start text-primary ps-3">Contraseña</label>
+                            </div>
+                        </legend>
+                    </fieldset>
+                    <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Borrar">
+                    <input id="logSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Enviar">
+                </form>
+                <form id="raceCreator" class="d-none row justify-content-center mx-auto px-3 p-md-0 w-100">
+                    <fieldset class="text-center">
+                        <legend class="fw-bold p-1 pt-0">Creador de Razas</legend>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="raceName" id="raceName" placeholder="Dwarf" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="raceName" class="text-start text-primary ps-3">Nombre de la Raza</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" name="strModifier" id="strMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="strModifier" class="text-start text-primary ps-3">Modificador de Fuerza</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" name="dexModifier" id="dexMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="dexModifier" class="text-start text-primary ps-3">Modificador de Destreza</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" name="conModifier" id="conMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="conModifier" class="text-start text-primary ps-3">Modificador de Constitución</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="size" id="size" placeholder="3 feet" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="size" class="text-start text-primary ps-3">Tamaño</label>
+                            </div>
+                            <div class="form-floating mb-2">
+                                <input type="text" name="characteristics" id="characteristics" placeholder="Darkvision" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="characteristics" class="text-start text-primary ps-3">Characterísticas</label>
+                            </div>
+                        </legend>
+                        <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Borrar">
+                        <input id="raceSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Enviar">
+                    </fieldset>
+                </form>
+                <div class="d-flex justify-content-end mt-3">
+                    <input class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Cerrar" id="closeModal">
+                </div>
+            </article>
+        </section>
+        <section id="charModal" class="d-none position-fixed top-0 start-0 w-100 h-100 overflow-auto modal__background--color modal--depth">
+            <article class="ms-auto p-2 charModal__content bg-success w-sm-75 w-md-50 w-lg-25" >
+                <div id="charList">
+                    <h3 class="text-center fw-bold w-100 m-0 p-0">Lista de Personajes</h3>
+                </div>
+                <div class="d-flex justify-content-end mt-3">
+                    <input class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Cerrar" id="closeCharModal">
+                </div>
             </article>
         </section>
         <a href="#top" class="position-fixed text-dark fs-1 backTop--position"><i class="bi bi-arrow-up-circle-fill backTop--opacity"></i></a>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center bg-dark text-primary p-1 apps__footer--position">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center bg-dark text-primary p-1">
             <a href="inicio.html"><img src="img/wax.svg" alt="Logo" class="logo--size"></a>
             <a href="mapaSitio.html"  class="text-decoration-none fw-bolder link--color">Mapa del Sitio</a>
             <a href="https://www.instagram.com/wan.lib/" class="link--color"><i class="bi bi-instagram fs-3"></i></a>

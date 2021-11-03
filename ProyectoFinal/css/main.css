@@ -7388,10 +7388,14 @@ textarea.form-control-lg {
     max-width: 65ch; }
   .break--size {
     width: 75vw; }
+  .w-md-50 {
+    width: 50%; }
   .w-md-100 {
     width: 100%; } }
 
 @media only screen and (min-width: 992px) {
+  .w-lg-25 {
+    width: 25%; }
   .w-lg-50 {
     width: 50%; } }
 
@@ -7462,7 +7466,7 @@ table {
     transform: unset;
     width: unset; }
   .nav__list--size {
-    width: 456px; }
+    width: 465px; }
   .nav__stories--size {
     overflow: unset; } }
 
@@ -7673,6 +7677,10 @@ table {
 .modal__content--margin {
   margin-top: 80px; }
 
+.charModal__content {
+  margin-top: 0;
+  min-height: 100%; }
+
 .die__results--length {
   max-width: 65ch; }
 
@@ -7686,13 +7694,6 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield; }
-
-@media only screen and (min-width: 976px) {
-  .apps__footer--position {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0; } }
 
 /* Contacto */
 .form__btn--size {

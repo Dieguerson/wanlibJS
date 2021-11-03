@@ -15,6 +15,10 @@
 .modal__content--margin{
     margin-top: 80px;
 }
+.charModal__content{
+    margin-top: 0;
+    min-height: 100%;
+}
 .die__results--length{
     max-width: 65ch;
 }
@@ -28,12 +32,4 @@ input::-webkit-inner-spin-button {
 }
 input[type=number] {
     -moz-appearance: textfield;
-}
-@media only screen and (min-width: 976px){
-    .apps__footer--position{
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
 }
