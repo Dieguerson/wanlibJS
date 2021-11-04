@@ -1,4 +1,3 @@
-//Admin Modal
 let openModal = document.getElementById("openModal");
 openModal.addEventListener("click", onModal);
 let closeModal = document.getElementById("closeModal");
@@ -29,7 +28,6 @@ function access(){
     } 
 }
 
-//Simulador de dados
 let result = []; 
 let paragraph = document.getElementById("results");
 let ammount = document.getElementById("ammount");
@@ -79,13 +77,11 @@ function dieRoller (e){
     printer();
 }
 
-//Impresora de resultados
 function printer(){
     paragraph.innerText = "[" + hiLo(result) + "]";
     paragraph.style.setProperty("display", "block", "important");
 }
 
-//Ordenador por Burbujeo
 function hiLo(data) {
     for (let i = 0 ; i < data.length ; i++) {
         for (let j = 0 ; j < data.length ; j++) {
@@ -99,7 +95,6 @@ function hiLo(data) {
     return result = data;
 }
 
-//Razas de D&D
 let raceSend = document.getElementById("raceSend");
 raceSend.addEventListener("click" , raceCreator);
 class newRace{
@@ -155,7 +150,6 @@ function raceSelect(raceChoice){
 }
 raceList();
 
-//Quick Admin
 let qckAdm = document.getElementById("qckAdm");
 qckAdm.addEventListener("click" , quickAdmin);
 function quickAdmin(){
@@ -182,7 +176,6 @@ function quickAdmin(){
     }
 }
 
-//Stats: Fuerza, Destreza y Constitución del Personaje
 let statRand = document.getElementById("statRand") ;
 function three(){
     die(3 , 6)
@@ -220,7 +213,6 @@ function stats(){
     }
 }
 
-//Character: Función constructora de personajes
 class character{
     constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
         this.namChar = name;
@@ -236,7 +228,6 @@ class character{
     }
 }
 
-//Creation: Génesis del personaje
 let STR = 0;
 let DEX = 0;
 let CON = 0;
@@ -262,7 +253,6 @@ function creation (){
     setTimeout(function(){document.body.removeChild(document.body.lastChild);},1250);
 }
 
-//Character List
 let charModal = document.getElementById("charModal");
 let openCharModal = document.getElementById("openCharModal");
 openCharModal.addEventListener("click" , onCharModal);
