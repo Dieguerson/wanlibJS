@@ -1,42 +1,19 @@
-let openModal = document.getElementById("openModal");
-openModal.addEventListener("click", onModal);
-let closeModal = document.getElementById("closeModal");
-closeModal.addEventListener("click", offModal);
-let modal = document.getElementById("modal");
-function onModal(){
-    modal.classList.replace("d-none" , "d-block");
-}
-function offModal(){
-    modal.classList.replace("d-block" , "d-none");
-}
-let userName = document.getElementById("userName");
-let password = document.getElementById("pass");
-let logSend = document.getElementById("logSend");
-logSend.addEventListener("click" , access);
+$("#openModal , #closeModal").click(function(){$("#modal").toggleClass("d-none d-block");});
+$("#logSend").click(access);
+$("#logIn").keypress(function(e){let key = e.which; if(key == 13){access()}});
 function access(){
-    let logIn = document.getElementById("logIn");
-    let raceCreator = document.getElementById("raceCreator");
-    if (userName.value == "Admin" && password.value == "Pr0baNd0"){
-        logIn.style.display = "none";
-        raceCreator.style.setProperty("display", "block", "important");
-    } else{
-        let logError = document.createElement("p");
-        logError.innerText = "That's not a valid username or password.";
-        logError.className = "w-100 text-center fs-4 mt-2";
-        logIn.appendChild(logError);
-        setTimeout(function(){logIn.removeChild(logIn.lastChild);},2000);
+    if ($("#userName").val() == "Admin" && $("#pass").val() == "Pr0baNd0"){
+        $("#logIn").toggleClass("d-block d-none");
+        $("#raceCreator").toggleClass("d-block d-none");
+    }else{
+        $("#logIn").append(`<p class="w-100 text-center fs-4 mt-2">That's not a valid username or password.</p>`);
+        setTimeout(function(){$("#logIn").children().last().remove();},1300);
     } 
 }
 
-let result = []; 
-let paragraph = document.getElementById("results");
-let ammount = document.getElementById("ammount");
-let dieSim = document.querySelectorAll(".dieSim");
-for (let roll of dieSim){
-    roll.addEventListener("click" , dieFace);
-    roll.addEventListener("click" , dieRoller);
-}
 let faceAmm = 0;
+$(".dieSim").click(dieFace);
+$(".dieSim").click(dieRoller);
 function dieFace(e){
     switch (e.target.innerText){
         case "d4":
@@ -63,8 +40,12 @@ function dieFace(e){
         default:
             break;
     }
-    return faceAmm
 }
+function dieRoller (){
+    die ($("#ammount").val() , faceAmm);
+    $("#results").text(`[${hiLo(result)}]`);
+}
+let result = [];
 function die (dieNum , faceNum){
     result = [];
     for (let i = 0 ; i < dieNum ; i++){
@@ -72,16 +53,6 @@ function die (dieNum , faceNum){
         result.push (roller);
     }
 }
-function dieRoller (e){
-    die (ammount.value , faceAmm);
-    printer();
-}
-
-function printer(){
-    paragraph.innerText = "[" + hiLo(result) + "]";
-    paragraph.style.setProperty("display", "block", "important");
-}
-
 function hiLo(data) {
     for (let i = 0 ; i < data.length ; i++) {
         for (let j = 0 ; j < data.length ; j++) {
@@ -95,8 +66,97 @@ function hiLo(data) {
     return result = data;
 }
 
-let raceSend = document.getElementById("raceSend");
-raceSend.addEventListener("click" , raceCreator);
+class character{
+    constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
+        this.namChar = name;
+        this.raceChar = selectedRace;
+        this.strength = STR;
+        this.strMod = Math.floor((this.strength - 10) / 2);
+        this.dexterity = DEX;
+        this.dexMod = Math.floor((this.dexterity - 10) / 2);
+        this.constitution = CON;
+        this.conMod = Math.floor((this.constitution - 10) / 2);
+        this.size = size;
+        this.characteristics = characteristics;
+    }
+}
+let STR = 0 , DEX = 0 , CON = 0 , charCol=[];
+$("#genesis").click(function(){
+                        STR = 0;
+                        DEX = 0;
+                        CON = 0;
+                        stats();
+                        raceSelect($("#race").val());
+                        const hero = new character($("#charName").val() , selectedRace , STR , DEX , CON , selectedRaceSize , characteristics);
+                        charCol.push(hero);
+                        chrLstCrtr();
+                        $("body").append(`<section class="d-block position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
+                                            <article class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border">
+                                                <h3 class="text-center fw-bold w-100 m-0 px-3">Congratulations!</h3>
+                                                <p class="text-center fw-bold w-100 m-0 px-3">Your Character Has Been Created!</p>
+                                            </article>
+                                          </section>`);
+                        setTimeout(function(){$("body").children().last().remove();},1250);
+});
+$("#openCharModal , #closeCharModal").click(function(){$("#charModal").toggleClass("d-none d-block");});
+function chrLstCrtr(){
+    $("#charList").html(`<h3 class="text-center fw-bold w-100 m-0 p-0">Character List</h3>`);
+    for (let char of charCol){
+        $("#charList").append(`<div>
+                                   <h3 class="text-md-start">${char.namChar}</h3>
+                                   <p><b>Race: </b>${char.raceChar}</p>
+                                   <ul><b>Stats:</b>
+                                       <li class="ms-5"> <b>Strength: </b>${char.strength}</li>
+                                       <li class="ms-5"> <b>Dexterity: </b>${char.dexterity}</li>
+                                       <li class="ms-5"> <b>Constitution: </b>${char.constitution}</li>
+                                   </ul>
+                                   <ul><b>Stats Modifiers:</b>
+                                       <li class="ms-5"> <b>Strength: </b>${char.strMod}</li>
+                                       <li class="ms-5"> <b>Dexterity: </b>${char.dexMod}</li>
+                                       <li class="ms-5"> <b>Constitution: </b>${char.conMod}</li>
+                                   </ul>
+                                   <p><b>Size: </b>${char.size}</p>
+                                   <p><b>Characteristics: </b>${char.characteristics}</p>
+                               </div>`);
+    }
+}
+
+function stats(){
+    if ($("#statRand").val() == "3d6"){
+        do{
+            STR = three();
+            DEX = three();
+            CON = three();
+        }while(STR === 0 || DEX === 0 || CON === 0)
+    }else if ($("#statRand").val() == "4d6"){
+        do{
+            STR = four();
+            DEX = four();
+            CON = four();
+        }while(STR === 0 || DEX === 0 || CON === 0)
+    }
+}
+function three(){
+    die(3 , 6)
+    let sum = 0;
+    for (let i = 0 ; i < result.length ; i++){
+        sum = sum + result[i];
+    }
+    return sum;
+}
+function four(){
+    die(4 , 6);
+    hiLo(result);
+    result.pop();
+    let sum = 0;
+    for (let i = 0 ; i < result.length ; i++){
+        sum = sum + result[i];
+    }
+    return sum;
+}
+
+$("#raceSend").click(raceCreator);
+$("#raceCreator").keypress(function(e){let key = e.which; if(key == 13){raceCreator()}});
 class newRace{
     constructor (raceName , strMod , dexMod , conMod , raceSize, raceCharacteristics){
         this.raceName = raceName;
@@ -108,30 +168,11 @@ class newRace{
     }
 }
 function raceCreator(){
-    let raceName = document.getElementById("raceName").value;
-    let strMod =document.getElementById("strMod").value;
-    let dexMod =document.getElementById("dexMod").value;
-    let conMod =document.getElementById("conMod").value;
-    let raceSize = document.getElementById("size").value;
-    let raceCharacteristics = document.getElementById("characteristics").value;
-    let rcCrtr = document.getElementById("raceCreator");
-    let raceMsj = document.createElement("p");
+    let raceName = $("#raceName").val() , strMod = $("#strMod").val() , dexMod = $("#dexMod").val() , conMod = $("#conMod").val() , raceSize = $("#size").val() , raceCharacteristics = $("#characteristics").val();
     const race = JSON.stringify(new newRace(raceName , strMod , dexMod , conMod , raceSize , raceCharacteristics));
     localStorage.setItem(raceName , race);
-    raceMsj.innerText = "Congratulations! The " + raceName + " race has been created!";
-    rcCrtr.appendChild(raceMsj);
-    raceMsj.className = "w-100 text-center fs-4 mt-2";
-    setTimeout(function(){rcCrtr.removeChild(rcCrtr.lastChild);},2000);
-}
-let raceLst = document.getElementById("race");
-function raceList(){
-    for (let i = 0; i < localStorage.length ; i++){
-        let raceItem = document.createElement("option");
-        let raceData = localStorage.key(i);
-        raceItem.value = raceData;
-        raceItem.innerText = raceData;
-        raceLst.appendChild(raceItem);
-    }
+    $("#raceCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! The ${raceName} race has been created!</p>`);
+    setTimeout(function(){$("#raceCreator").children().last().remove();},1500);
 }
 let size = "";
 let selectedRace = "";
@@ -148,10 +189,13 @@ function raceSelect(raceChoice){
     selectedRace = ussableRace.raceName;
     selectedRaceSize = ussableRace.raceSize;
 }
-raceList();
-
-let qckAdm = document.getElementById("qckAdm");
-qckAdm.addEventListener("click" , quickAdmin);
+$("#race").ready(raceList);
+function raceList(){
+    for (let i = 0; i < localStorage.length ; i++){
+        $("#race").append(`<option value="${localStorage.key(i)}">${localStorage.key(i)}</option>`);
+    }
+}
+$("#qckAdm").click(quickAdmin);
 function quickAdmin(){
     let quickName;
     let quickRace;
@@ -173,118 +217,5 @@ function quickAdmin(){
                 localStorage.setItem(quickName , quickRace);
                 break;
         }
-    }
-}
-
-let statRand = document.getElementById("statRand") ;
-function three(){
-    die(3 , 6)
-    let sum = 0;
-    for (let i = 0 ; i < result.length ; i++){
-        sum = sum + result[i];
-    }
-    return sum;
-}
-function four(){
-    die(4 , 6);
-    hiLo(result);
-    result.pop();
-    let sum = 0;
-    for (let i = 0 ; i < result.length ; i++){
-        sum = sum + result[i];
-    }
-    return sum;
-}
-function stats(){
-    if (statRand.value == "3d6"){
-        do{
-            STR = three();
-            DEX = three();
-            CON = three();
-        }while(STR === 0 || DEX === 0 || CON === 0)
-    }else if (statRand.value == "4d6"){
-        do{
-            STR = four();
-            DEX = four();
-            CON = four();
-        }while(STR === 0 || DEX === 0 || CON === 0)
-    }else{
-        alert("I don't Know that Method. Let's Try Again!");
-    }
-}
-
-class character{
-    constructor (name , selectedRace , STR , DEX , CON , size , characteristics){
-        this.namChar = name;
-        this.raceChar = selectedRace;
-        this.strength = STR;
-        this.strMod = Math.floor((this.strength - 10) / 2);
-        this.dexterity = DEX;
-        this.dexMod = Math.floor((this.dexterity - 10) / 2);
-        this.constitution = CON;
-        this.conMod = Math.floor((this.constitution - 10) / 2);
-        this.size = size;
-        this.characteristics = characteristics;
-    }
-}
-
-let STR = 0;
-let DEX = 0;
-let CON = 0;
-let chrCrtr = document.getElementById("genesis");
-chrCrtr.addEventListener ("click" , creation);
-function creation (){
-    let names = document.getElementById("charName").value;
-    STR = 0;
-    DEX = 0;
-    CON = 0;
-    stats();
-    raceSelect(raceLst.value);
-    const hero = new character(names, selectedRace, STR, DEX, CON , selectedRaceSize , characteristics);
-    charCol.push(hero);
-    chrLstCrtr();
-    let genesisMsj = document.createElement("section");
-    genesisMsj.className = "d-block position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth"
-    genesisMsj.innerHTML = `<article class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border">
-                                    <h3 class="text-center fw-bold w-100 m-0 px-3">Congratulations!</h3>
-                                    <p class="text-center fw-bold w-100 m-0 px-3">Your Character Has Been Created!</p>
-                            </article>`;
-    document.body.appendChild(genesisMsj);
-    setTimeout(function(){document.body.removeChild(document.body.lastChild);},1250);
-}
-
-let charModal = document.getElementById("charModal");
-let openCharModal = document.getElementById("openCharModal");
-openCharModal.addEventListener("click" , onCharModal);
-let closeCharModal = document.getElementById("closeCharModal");
-closeCharModal.addEventListener("click" , offCharModal);
-function onCharModal(){
-    charModal.classList.replace("d-none" , "d-block");
-}
-function offCharModal(){
-    charModal.classList.replace("d-block" , "d-none");
-}
-let charCol=[]
-let charList = document.getElementById("charList");
-function chrLstCrtr(){
-    charList.classList.replace("d-none" , "d-block");
-    charList.innerHTML = `<h2 class="text-center fw-bold w-100 m-0 p-0">Character List</h2>`;
-    for (let char of charCol){        
-        let charItem = document.createElement("div");
-        charItem.innerHTML = `<h3 class="text-center text-md-start">${char.namChar}</h3>
-                              <p><b>Race: </b>${char.raceChar}</p>
-                              <ul><b>Stats:</b>
-                                  <li class="ms-5"> <b>Strength: </b>${char.strength}</li>
-                                  <li class="ms-5"> <b>Dexterity: </b>${char.dexterity}</li>
-                                  <li class="ms-5"> <b>Constitution: </b>${char.constitution}</li>
-                              </ul>
-                              <ul><b>Stats Modifiers:</b>
-                                  <li class="ms-5"> <b>Strength: </b>${char.strMod}</li>
-                                  <li class="ms-5"> <b>Dexterity: </b>${char.dexMod}</li>
-                                  <li class="ms-5"> <b>Constitution: </b>${char.conMod}</li>
-                              </ul>
-                              <p><b>Size: </b>${char.size}</p>
-                              <p><b>Characteristics: </b>${char.characteristics}</p>`;
-        charList.appendChild(charItem);
     }
 }

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="img/wax.svg">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <title>The Wandering Librarian</title>
         <meta name="description" content="We write your Table Top RPG character's story for you!">
         <meta name="keywods" content="pricing, search, spells, character, creation, sheet, services, additionals, librarian, wandering, stories, fantasy">
@@ -81,66 +82,6 @@
                 <a class="nav-link active position-absolute d-lg-none bg-dark border-primary rounded-pill p-1 m-1 link--color nav__langFont--size border nav__lang--opacity" href="appsEs.html">Español</a>
             </div>
         </header>
-        <h1 class="m-3">Apps</h1>
-        <section class="d-flex flex-column justify-content-between container pb-4">
-            <article class="row justify-content-center w-md-100 w-xxl-75 mx-auto pt-4 px-0">
-                <h2 class="text-center fw-bold w-100 m-0 p-0">Dice Simulator</h2>
-                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 px-2 py-1 card--transform card--border apps__card--size">
-                    <h5 class="card-title m-auto mb-1 fs-6">Ammount</h5>
-                    <input class="h-50 w-100 text-center mx-auto mb-2 mt-0 bg-dark form-control text-secondary bg-dark border-secondary shadow
-                    contact__cursor--color contact__input--color contact__input--color" type="number" name="ammount" value="1" id="ammount">
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d4</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d6</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d8</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d10</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d12</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d20</h5>
-                </div>
-                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
-                    <h5 class="card-title w-100 m-auto">d100</h5>
-                </div>
-                <p class="w-100 text-center fs-4 mt-2">Results</p>
-                <p id="results" class="d-none fs-4 mt-2 text-center text-break die__results--length"></p>
-            </article>
-            <article class="row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25">
-                <h2 class="text-center fw-bold w-100 m-0 p-0">Character Creator</h2>
-                <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-50 button--border" id="qckAdm">Quick Admin</button>
-                <form action="" class="d-flex flex-wrap border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
-                    <fieldset class="w-100">
-                        <div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
-                                <label for="name" class="text-start text-primary">Character's Name:</label>
-                            </div>
-                            <label for="statRand" class="text-start fs-5 fw-bold ms-n1 mb-1">Stat Randomizer:</label>
-                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
-                                <option value="4d6">4d6 Method</option>
-                                <option value="3d6">3d6 Method</option>
-                            </select>
-                            <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Race:</label>
-                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
-                                <option value="None"></option>
-                            </select>
-                        </div>
-                    </fieldset>
-                    <input id="openCharModal" class="btn btn-dark text-primary fw-bold m-2 p-0 px-1 button--border" type="button" value="Character List">
-                    <input class="btn btn-primary text-dark fw-bold shadow-none ms-auto m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
-                    <input id="genesis" class="btn btn-dark text-primary shadow-none fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Create">
-                </form>
-            </article>
-        </section>
         <section id="modal" class="d-none position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
             <article class="border border-2 mx-auto py-3 modal__content--margin bg-success card--border w-sm-75 w-lg-50 w-xxl-25">
                 <form id="logIn" class="row justify-content-center mx-auto px-3 p-md-0 w-100">
@@ -194,6 +135,66 @@
                 <div class="d-flex justify-content-end mt-3">
                     <input class="btn btn-dark text-primary fw-bold mx-3 p-0 form__btn--size button--border" type="button" value="Close" id="closeModal">
                 </div>
+            </article>
+        </section>
+        <h1 class="m-3">Apps</h1>
+        <section class="d-flex flex-column justify-content-between container pb-4">
+            <article class="row justify-content-center w-md-100 w-xxl-75 mx-auto pt-4 px-0">
+                <h2 class="text-center fw-bold w-100 m-0 p-0">Dice Simulator</h2>
+                <div class="card text-center justify-content-center col-16 bg-success text-dark shadow m-3 px-2 py-1 card--transform card--border apps__card--size">
+                    <h5 class="card-title m-auto mb-1 fs-6">Ammount</h5>
+                    <input class="h-50 w-100 text-center mx-auto mb-2 mt-0 bg-dark form-control text-secondary bg-dark border-secondary shadow
+                    contact__cursor--color contact__input--color contact__input--color" type="number" name="ammount" value="1" id="ammount">
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d4</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d6</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d8</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d10</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d12</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d20</h5>
+                </div>
+                <div class="dieSim card text-center justify-content-center col-16 bg-success text-dark shadow m-3 p-0 card--transform card--border apps__card--size">
+                    <h5 class="card-title w-100 m-auto">d100</h5>
+                </div>
+                <h3 class="fw-bold w-100 text-center mt-2">Results</h3>
+                <p id="results" class="fs-5 mt-2 text-center text-break die__results--length">Throw a Die!</p>
+            </article>
+            <article class="row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25">
+                <h2 class="text-center fw-bold w-100 m-0 p-0">Character Creator</h2>
+                <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-50 button--border" id="qckAdm">Quick Admin</button>
+                <form action="" class="d-flex flex-wrap border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
+                    <fieldset class="w-100">
+                        <div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="name" class="text-start text-primary">Character's Name:</label>
+                            </div>
+                            <label for="statRand" class="text-start fs-5 fw-bold ms-n1 mb-1">Stat Randomizer:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
+                                <option value="4d6">4d6 Method</option>
+                                <option value="3d6">3d6 Method</option>
+                            </select>
+                            <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Race:</label>
+                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
+                                <option value="None"></option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <input id="openCharModal" class="btn btn-dark text-primary fw-bold m-2 p-0 px-1 button--border" type="button" value="Character List">
+                    <input class="btn btn-primary text-dark fw-bold shadow-none ms-auto m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
+                    <input id="genesis" class="btn btn-dark text-primary shadow-none fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Create">
+                </form>
             </article>
         </section>
         <section id="charModal" class="d-none position-fixed top-0 start-0 w-100 h-100 overflow-auto modal__background--color modal--depth">
