@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="img/wax.svg">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <title>The Wandering Librarian</title>
         <meta name="description" content="We write your Table Top RPG character's story for you!">
         <meta name="keywods" content="wandering, librarian, stories, woric, leatherbound, fantasy, infinite, archive">
@@ -66,7 +67,7 @@
                                 <a class="nav-link active link--color" href="contact.html">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-none d-lg-block" href="inicio.html">
+                                <a class="nav-link d-none d-lg-block langbtn" href="">
                                     <img class="rounded" src="img/español.jpg" alt="Español">
                                 </a>
                             </li>
@@ -75,7 +76,8 @@
                 </div>
             </nav>
             <div class="d-flex justify-content-end">
-                <a class="nav-link active position-absolute d-lg-none bg-dark border-primary rounded-pill p-1 m-1 link--color nav__langFont--size border nav__lang--opacity" href="inicio.html">Español</a>
+                <div class="nav-link active position-absolute d-lg-none bg-dark border-primary rounded-pill p-1 m-1 link--color nav__langFont--size
+                border nav__lang--opacity langbtn" id="langbtn" href="">Español</div>
             </div>
         </header>
         <img src="img/infiniteArchive.jpg" alt="The Infinite Archive" class="w-100 hero--size hero--fit">
@@ -179,5 +181,6 @@
             <strong class="w-100 text-end footer__text--size footer__font--size">Developed by Diego Gabrielli</strong>
         </footer>
         <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/indexEs.js"></script>
     </body>
 </html>

@@ -1,4 +1,6 @@
-$("#openModal , #closeModal").click(function(){$("#modal").toggleClass("d-none d-block");});
+$("#openModal").click(function(){$("#modal").addClass("d-block").removeClass("d-none");});
+$("#closeModal").click(function(){setTimeout(function(){$("#modal").removeClass("d-block").addClass("d-none");},500)});
+$("#openModal , #closeModal").click(function(){$("#modalContent").slideToggle("slow");});
 $("#logSend").click(access);
 $("#logIn").keypress(function(e){let key = e.which; if(key == 13){access()}});
 function access(){
@@ -90,15 +92,20 @@ $("#genesis").click(function(){
                         const hero = new character($("#charName").val() , selectedRace , STR , DEX , CON , selectedRaceSize , characteristics);
                         charCol.push(hero);
                         chrLstCrtr();
-                        $("body").append(`<section class="d-block position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
-                                            <article class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border">
-                                                <h3 class="text-center fw-bold w-100 m-0 px-3">Congratulations!</h3>
-                                                <p class="text-center fw-bold w-100 m-0 px-3">Your Character Has Been Created!</p>
+                        $("body").append(`<section id="genMsj" class="position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth" style="display: none;">
+                                            <article id="genCont"class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border" style="width: 0px; height: 0px;">
+                                                <h3 class="text-center fw-bold w-100 m-0 px-3" style="display: none;">Congratulations!</h3>
+                                                <p class="text-center fw-bold w-100 m-0 px-3" style="display: none;">Your Character Has Been Created!</p>
                                             </article>
                                           </section>`);
-                        setTimeout(function(){$("body").children().last().remove();},1250);
+                        $("#genMsj").fadeIn("fast").delay(3600).fadeOut("fast");
+                        $("#genCont").animate({width:"300px"} , "slow").animate({height:"100px"} , "slow").delay(1100).animate({height:"0px"} , "slow").animate({width:"0px"} , "slow").hide(1);
+                        $("#genCont *").delay(800).show("normal").delay(1100).hide("normal");
+                        setTimeout(function(){$("body").children().last().remove();},4000);
 });
-$("#openCharModal , #closeCharModal").click(function(){$("#charModal").toggleClass("d-none d-block");});
+$("#openCharModal").click(function(){$("#charModal").addClass("d-block").removeClass("d-none");});
+$("#closeCharModal").click(function(){setTimeout(function(){$("#charModal").removeClass("d-block").addClass("d-none");},500)});
+$("#openCharModal , #closeCharModal").click(function(){$("#charModalContent").animate({width:"toggle"} , "slow");});
 function chrLstCrtr(){
     $("#charList").html(`<h3 class="text-center fw-bold w-100 m-0 p-0">Character List</h3>`);
     for (let char of charCol){
