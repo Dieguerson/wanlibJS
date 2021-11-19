@@ -28,6 +28,8 @@ function access(){
     } 
 }
 
+localStorage.setItem("Admin1" , JSON.stringify({password: "123456" , characters: charCol}));
+
 $("#userSend").click(function(){
     let i = 0;
     let j = 0;
