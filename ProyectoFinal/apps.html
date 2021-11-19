@@ -83,10 +83,11 @@
             </div>
         </header>
         <section id="modal" class="d-none position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth">
-            <article id="modalContent" class="border border-2 mx-auto py-3 modal__content--margin bg-success card--border w-sm-75 w-lg-50 w-xxl-25" style="display: none;">
-                <form id="logIn" class="row justify-content-center mx-auto px-3 p-md-0 w-100">
+            <article id="modalContent" class="d-none border border-2 mx-auto py-3 modal__content--margin bg-success card--border w-sm-75 w-lg-50 w-xxl-25">
+                <form id="logIn" class="d-flex row justify-content-center mx-auto px-3 p-md-0 w-100">
                     <fieldset>
                         <legend class="fw-bold p-1 pt-0">Log In</legend>
+                            <input id="signUp" class="btn btn-primary text-dark fw-bold mx-0 mb-3 p-0 px-1 button--border" type="button" value="Sign Up">
                             <div class="form-floating mb-3">
                                 <input type="text" name="name" id="userName" placeholder="Grimund Bronzeheart" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
                                 <label for="name" class="text-start text-primary ps-3">User Name</label>
@@ -97,39 +98,22 @@
                             </div>
                         </legend>
                     </fieldset>
-                    <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
-                    <input id="logSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
+                    <input id="logSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Log In">
                 </form>
-                <form id="raceCreator" class="d-none row justify-content-center mx-auto px-3 p-md-0 w-100">
+                <form id="userCreator" class="d-none row justify-content-center mx-auto px-3 p-md-0 w-100">
                     <fieldset class="text-center">
-                        <legend class="fw-bold p-1 pt-0">Race Creator</legend>
+                        <legend class="fw-bold p-1 pt-0">New User</legend>
                             <div class="form-floating mb-3">
-                                <input type="text" name="raceName" id="raceName" placeholder="Dwarf" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
-                                <label for="raceName" class="text-start text-primary ps-3">Race Name</label>
+                                <input type="text" name="newUserName" id="newUserName" placeholder="Grimund" class="form-floating form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
+                                <label for="newUserName" class="text-start text-primary ps-3">User Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" name="strModifier" id="strMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
-                                <label for="strModifier" class="text-start text-primary ps-3">Strength Modifier</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" name="dexModifier" id="dexMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
-                                <label for="dexModifier" class="text-start text-primary ps-3">Dexterity Modifier</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="number" name="conModifier" id="conMod" placeholder="0" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
-                                <label for="conModifier" class="text-start text-primary ps-3">Constitution Modifier</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="size" id="size" placeholder="3 feet" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
-                                <label for="size" class="text-start text-primary ps-3">Race Size</label>
-                            </div>
-                            <div class="form-floating mb-2">
-                                <input type="text" name="characteristics" id="characteristics" placeholder="Darkvision" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
-                                <label for="characteristics" class="text-start text-primary ps-3">Characteristics</label>
+                                <input type="password" name="userPass" id="userPass" placeholder="****" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color">
+                                <label for="userPass" class="text-start text-primary ps-3">Password</label>
                             </div>
                         </legend>
-                        <input class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="reset" value="Clear">
-                        <input id="raceSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Send">
+                        <input id="back" class="btn btn-primary text-dark fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Back">
+                        <input id="userSend" class="btn btn-dark text-primary fw-bold m-2 p-0 form__btn--size button--border" type="button" value="Create">
                     </fieldset>
                 </form>
                 <div class="d-flex justify-content-end mt-3">
@@ -172,7 +156,6 @@
             </article>
             <article class="row justify-content-end mx-auto px-3 mt-3 w-sm-75 w-lg-50 w-xxl-25">
                 <h2 class="text-center fw-bold w-100 m-0 p-0">Character Creator</h2>
-                <button class="btn btn-primary text-dark fw-bold m-auto text-center shadow w-50 button--border" id="qckAdm">Quick Admin</button>
                 <form action="" class="d-flex flex-wrap border border-2 bg-success shadow my-2 p-3 pb-2 contact__fieldset--border">
                     <fieldset class="w-100">
                         <div>
@@ -198,7 +181,7 @@
             </article>
         </section>
         <section id="charModal" class="d-none position-fixed top-0 start-0 w-100 h-100 overflow-auto modal__background--color modal--depth">
-            <article id="charModalContent"class="ms-auto p-2 charModal__content bg-success w-sm-75 w-md-50 w-lg-25" style="display: none;">
+            <article id="charModalContent"class="d-none ms-auto p-2 charModal__content bg-success w-sm-75 w-md-50 w-lg-25">
                 <div id="charList">
                     <h3 class="text-center fw-bold w-100 m-0 p-0">Character List</h3>
                 </div>
