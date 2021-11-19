@@ -12,7 +12,7 @@ $("#signUp , #back").click(function(){
 let user = "";
 let userData;
 function access(){
-    if ($("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
+    if (localStorage.length > 0 && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
         user = $("#userName").val();
         userData = JSON.parse(localStorage[$("#userName").val()]);
         charCol = userData.characters;
