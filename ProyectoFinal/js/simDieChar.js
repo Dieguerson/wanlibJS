@@ -12,7 +12,7 @@ $("#signUp , #back").click(function(){
 let user = "";
 let userData;
 function access(){
-    if (localStorage.length > 0 && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
+    if ($("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
         user = $("#userName").val();
         userData = JSON.parse(localStorage[$("#userName").val()]);
         charCol = userData.characters;
@@ -27,8 +27,6 @@ function access(){
         setTimeout(function(){$("#logIn").children().last().remove();},1300);
     } 
 }
-
-$("body").ready(localStorage.setItem("Admin1" , JSON.stringify({password: "123456" , characters: charCol})));
 
 $("#userSend").click(function(){
     let i = 0;
