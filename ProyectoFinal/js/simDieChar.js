@@ -13,10 +13,10 @@ let user = "";
 let userData;
 function access(){
     if (localStorage.length > 0 && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
-        user = $("#userName").val();
+        setTimeout(function(){user = $("#userName").val();
         userData = JSON.parse(localStorage[$("#userName").val()]);
         charCol = userData.characters;
-        chrLstCrtr();
+        chrLstCrtr();},500);
         $("#logIn").html(`<fieldset>
                                 <legend class="fw-bold p-1 pt-0">Log In</legend>
                                 <p class="w-100 text-center fs-4 mt-2">You are now logged in!</p>
