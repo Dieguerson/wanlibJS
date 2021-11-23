@@ -19,7 +19,7 @@ function ubicacion(position){
 
 //API: Application Programming Interfaces. Reglas y especificaciones que las aplicaciones siguen para comunicarse
 
-//let clima = "http://api.openweathermap.org/data/2.5/weather?q=Cordoba&appid=beaf65e31e66a3325b6aad148e509cc8"
+//let clima = "http://api.openweathermap.org/data/2.5/weather?q=Cordoba&appid="
 
 //$("#botonClima").click(function(){$.get(clima , function(datos){console.log(datos)})})
 $.ajax({
@@ -27,7 +27,7 @@ $.ajax({
     type: "GET",
     data:{
         q: 'Buenos Aires',
-        appid: 'beaf65e31e66a3325b6aad148e509cc8',
+        appid: ,
         dataType: 'jsonp',
         units: 'metric'
     },
