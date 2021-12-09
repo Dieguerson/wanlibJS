@@ -1,4 +1,8 @@
 let dndData = "https://www.dnd5eapi.co/api";
+let db = "json/db.json";
+$.getJSON(db , function(data){
+    console.log(data);
+});
 
 $("#openModal").click(function(){$("#modal").addClass("d-block").removeClass("d-none");});
 $("#closeModal").click(function(){setTimeout(function(){$("#modal").removeClass("d-block").addClass("d-none");},500)});
@@ -12,8 +16,7 @@ $("#signUp , #back").click(function(){
 let user = "";
 let userData;
 function access(){
-    if (localStorage.length > 0 && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
-        user = $("#userName").val();
+    if (localStorage.length > 0 && $("#userName").val() != "" && localStorage[$("#userName").val()] != null && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
         userData = JSON.parse(localStorage[$("#userName").val()]);
         charCol = userData.characters;
         chrLstCrtr();
@@ -103,44 +106,142 @@ function hiLo(data) {
 }
 
 class character{
-    constructor (name , selectedRace , STR , DEX , CON , INT , WIS , CHA , size , characteristics){
-        this.namChar = name;
-        this.raceChar = selectedRace;
-        this.strength = STR;
-        this.strMod = Math.floor((this.strength - 10) / 2);
-        this.dexterity = DEX;
-        this.dexMod = Math.floor((this.dexterity - 10) / 2);
-        this.constitution = CON;
-        this.conMod = Math.floor((this.constitution - 10) / 2);
-        this.intelligence = INT;
-        this.intMod = Math.floor((this.intelligence - 10) / 2);
-        this.wisdom = WIS;
-        this.wisMod = Math.floor((this.wisdom - 10) / 2);
-        this.charisma = CHA;
-        this.chaMod = Math.floor((this.charisma - 10) / 2);
-        this.size = size;
-        this.characteristics = characteristics;
-    }
+    constructor (
+        name,
+        selectedRace,
+        raceAge,
+        raceAlignment,
+        raceLanguages,
+        racePerks,
+        raceProficiencies,
+        raceSize,
+        raceSpeed,
+        selectedSubRace,
+        subRacePerks,
+        STR,
+        DEX,
+        CON,
+        INT,
+        WIS,
+        CHA,
+        selectedClass,
+        classEquipment,
+        classFeatures,
+        classHP1,
+        classHP,
+        classProficiencies,
+        classSavingThrows,
+        classSkills,
+        profBonus,
+        subClassName,
+        selectedSubClass,
+        subClassFeatures,
+        selectedBackground,
+        backgroundEquipment,
+        backgroundFeature,
+        backgroundLanguages,
+        backgroundSkills,
+        backgroundTools,
+        backgroundVariant
+        )
+        {
+            this.namChar = name;
+            this.raceChar = selectedRace;
+            this.ageChar = raceAge;
+            this.alignChar = raceAlignment;
+            this.langChar = raceLanguages;
+            this.perkChar = racePerks;
+            this.profChar = raceProficiencies;
+            this.sizeChar = raceSize;
+            this.speedChar = raceSpeed;
+            this.subRChar = selectedSubRace;
+            this.subRPerk = subRacePerks;
+            this.strength = STR;
+            this.strMod = Math.floor((this.strength - 10) / 2);
+            this.dexterity = DEX;
+            this.dexMod = Math.floor((this.dexterity - 10) / 2);
+            this.constitution = CON;
+            this.conMod = Math.floor((this.constitution - 10) / 2);
+            this.intelligence = INT;
+            this.intMod = Math.floor((this.intelligence - 10) / 2);
+            this.wisdom = WIS;
+            this.wisMod = Math.floor((this.wisdom - 10) / 2);
+            this.charisma = CHA;
+            this.chaMod = Math.floor((this.charisma - 10) / 2);
+            this.classChar = selectedClass;
+            this.equipChar = classEquipment;
+            this.featChar = classFeatures;
+            this.l1HP = classHP1;
+            this.hpChar = classHP;
+            this.classProf = classProficiencies;
+            this.saveThrowChar = classSavingThrows;
+            this.skillChar = classSkills;
+            this.profBonus = profBonus;
+            this.subClassName = subClassName;
+            this.subClass = selectedSubClass;
+            this.subClassFeat = subClassFeatures;
+            this.backChar = selectedBackground;
+            this.backEquip = backgroundEquipment;
+            this.backFeat = backgroundFeature;
+            this.backLang = backgroundLanguages;
+            this.backSkill = backgroundSkills;
+            this.backTools = backgroundTools;
+            this.backVar = backgroundVariant;
+        }
 }
 let STR = 0 , DEX = 0 , CON = 0 , INT = 0 , WIS = 0 , CHA = 0 , charCol=[];
 $("#genesis").click(function(){
-                        STR = 0;
-                        DEX = 0;
-                        CON = 0;
-                        INT = 0;
-                        WIS = 0;
-                        CHA = 0;
-                        characteristics = "";
-                        size = "";
                         stats();
-                        raceSelect($("#race").val());
-                        setTimeout(function(){const hero = new character($("#charName").val() , selectedRace , STR , DEX , CON , INT , WIS , CHA , size , characteristics);
-                        charCol.push(hero);
-                        if (user != ""){
-                            userData.characters = charCol;
-                            localStorage[user] = JSON.stringify(userData);
-                        }
-                        chrLstCrtr();},300)
+                        console.log(STR, DEX, CON, INT, WIS, CHA)
+                        raceSelect($("#race").val() , $("#subRace").val());
+                        classSelect($("#class").val() , $("#subClass").val());
+                        backgroundSelect($("#background").val());
+                        setTimeout(function(){
+                            const hero = new character(
+                                $("#charName").val(),
+                                selectedRace,
+                                raceAge,
+                                raceAlignment,
+                                raceLanguages,
+                                racePerks,
+                                raceProficiencies,
+                                raceSize,
+                                raceSpeed,
+                                selectedSubRace,
+                                subRacePerks,
+                                STR,
+                                DEX,
+                                CON,
+                                INT,
+                                WIS,
+                                CHA,
+                                selectedClass,
+                                classEquipment,
+                                classFeatures, 
+                                classHP1,
+                                classHP,
+                                classProficiencies,
+                                classSavingThrows,
+                                classSkills,
+                                profBonus,
+                                subClassName,
+                                selectedSubClass,
+                                subClassFeatures,
+                                selectedBackground,
+                                backgroundEquipment,
+                                backgroundFeature,
+                                backgroundLanguages,
+                                backgroundSkills,
+                                backgroundTools,
+                                backgroundVariant,
+                                );
+                            charCol.push(hero);
+                            if (user != ""){
+                                userData.characters = charCol;
+                                localStorage[user] = JSON.stringify(userData);
+                            }
+                            chrLstCrtr();
+                            console.log(hero)},300)
                         $("body").append(`<section id="genMsj" class="position-fixed top-0 start-0 w-100 h-100 p-4 overflow-auto modal__background--color modal--depth" style="display: none;">
                                             <article id="genCont"class="position-absolute top-50 start-50 translate-middle border border-2 py-3 m-auto bg-success card--border" style="width: 0px; height: 0px;">
                                                 <h3 class="text-center fw-bold w-100 m-0 px-3" style="display: none;">Congratulations!</h3>
@@ -160,8 +261,19 @@ function chrLstCrtr(){
     for (let char of charCol){
         $("#charList").append(`<div>
                                    <h3 class="text-md-start">${char.namChar}</h3>
-                                   <p><b>Race: </b>${char.raceChar}</p>
-                                   <ul><b>Stats:</b>
+                                   <p><b>Race: </b>${char.subRChar ? char.subRChar + " " + char.raceChar : char.raceChar}</p>
+                                   <ul>
+                                       <li class="ms-5"> <b>Age: </b>${char.ageChar}</li>
+                                       <li class="ms-5"> <b>Alignment: </b>${char.alignChar}</li>
+                                       <li class="ms-5"> <b>Languages: </b>${char.langChar}</li>
+                                       <li class="ms-5"> <b>Abilities: </b>${char.perkChar}</li>
+                                       <li class="ms-5"> <b>Proficiencies: </b>${char.profChar}</li>
+                                       <li class="ms-5"> <b>Size: </b>${char.sizeChar}</li>
+                                       <li class="ms-5"> <b>Speed: </b>${char.speedChar}</li>
+                                       <li class="ms-5"> <b>${char.subRChar ? char.subRChar + " " + char.raceChar : "Subrace"} Abilities: </b>${char.subRPerk}</li>
+                                   </ul>
+                                   <p><b>Stats:</b></p>
+                                   <ul>
                                        <li class="ms-5"> <b>Strength: </b>${char.strength}</li>
                                        <li class="ms-5"> <b>Dexterity: </b>${char.dexterity}</li>
                                        <li class="ms-5"> <b>Constitution: </b>${char.constitution}</li>
@@ -169,7 +281,8 @@ function chrLstCrtr(){
                                        <li class="ms-5"> <b>Wisdom: </b>${char.wisdom}</li>
                                        <li class="ms-5"> <b>Charisma: </b>${char.charisma}</li>
                                    </ul>
-                                   <ul><b>Stats Modifiers:</b>
+                                   <p><b>Stats Modifiers:</b></p>
+                                   <ul>
                                        <li class="ms-5"> <b>Strength: </b>${char.strMod}</li>
                                        <li class="ms-5"> <b>Dexterity: </b>${char.dexMod}</li>
                                        <li class="ms-5"> <b>Constitution: </b>${char.conMod}</li>
@@ -177,8 +290,42 @@ function chrLstCrtr(){
                                        <li class="ms-5"> <b>Wisdom: </b>${char.wisMod}</li>
                                        <li class="ms-5"> <b>Charisma: </b>${char.chaMod}</li>
                                    </ul>
-                                   <p><b>Size: </b>${char.size}</p>
-                                   <p><b>Characteristics: </b>${char.characteristics}</p>
+                                   <p><b>Class: </b>${char.classChar}</p>
+                                   <ul>
+                                       <li class="ms-5"> <b>Equipment: </b>
+                                           <ul>
+                                               ${char.equipChar}
+                                           </ul>
+                                       </li>
+                                       <li class="ms-5"> <b>Features: </b>${char.featChar}</li>
+                                       <li class="ms-5"> <b>HP at lvl 1: </b>${char.l1HP} + ${char.conMod}</li>
+                                       <li class="ms-5"> <b>HP from lvl2 onward: </b>${char.hpChar}</li>
+                                       <li class="ms-5"> <b>Proficiencies: </b>${char.classProf}</li>
+                                       <li class="ms-5"> <b>Saving Throws: </b>${char.saveThrowChar}</li>
+                                       <li class="ms-5"> <b>Skills: </b>${char.skillChar}</li>
+                                       <li class="ms-5">Proficiency Bonus:
+                                           <ul>
+                                               <li>${char.profBonus[0]}</li>
+                                               <li>${char.profBonus[1]}</li>
+                                               <li>${char.profBonus[2]}</li>
+                                               <li>${char.profBonus[3]}</li>
+                                               <li>${char.profBonus[4]}</li>
+                                           </ul>
+                                       </li>
+                                   </ul>
+                                   <p><b>${char.subClassName}: </b>${char.subClass}</p>
+                                   <ul>
+                                       <li class="ms-5"> <b>Features: </b>${char.subClassFeat}</li>
+                                   </ul>
+                                   <p><b>Background: </b>${char.backChar}</p>
+                                   <ul>
+                                       <li class="ms-5"> <b>Equipment: </b>${char.backEquip}</li>
+                                       <li class="ms-5"> <b>Features: </b>${char.backFeat}</li>
+                                       <li class="ms-5"> <b>Languages: </b>${char.backLang}</li>
+                                       <li class="ms-5"> <b>Skill Proficiencies: </b>${char.backSkill}</li>
+                                       <li class="ms-5"> <b>Tool Proficiencies: </b>${char.backTools}</li>
+                                       <li class="ms-5"> <b>${char.backChar} Variant: </b>${char.backVar}</li>
+                                   </ul>
                                </div>`);
     }
 }
@@ -223,51 +370,205 @@ function four(){
     return sum;
 }
 
-let size = "";
 let selectedRace = "";
-let characteristics = "";
-function raceSelect(raceChoice){
-    $.get(dndData+"/races/"+raceChoice , function(datos){
-        for (let i = 0 ; i < datos.ability_bonuses.length ; i++){
-            switch (datos.ability_bonuses[i].ability_score.index){
-                case "str":
-                    STR = STR + datos.ability_bonuses[i].bonus;
+let raceAge = "";
+let raceAlignment = "";
+let raceLanguages = "";
+let racePerks = "";
+let raceProficiencies = "";
+let raceSize = "";
+let raceSpeed = "";
+let selectedSubRace = "";
+let subRacePerks = "";
+
+function raceSelect(raceChoice , subRaceChoice){
+    $.getJSON(db , function(datos){
+        for (let i = 0 ; i < datos.race[raceChoice].abIncrease.length ; i++){
+            switch (datos.race[raceChoice].abIncrease[i].name){
+                case "STR":
+                    STR = STR + datos.race[raceChoice].abIncrease[i].value;
                     break;
-                case "dex":
-                    DEX = DEX + datos.ability_bonuses[i].bonus;
+                case "DEX":
+                    DEX = DEX + datos.race[raceChoice].abIncrease[i].value;
                     break;
-                case "con":
-                    CON = CON + datos.ability_bonuses[i].bonus;
+                case "CON":
+                    CON = CON + datos.race[raceChoice].abIncrease[i].value;
                     break;
-                case "int":
-                    INT = INT + datos.ability_bonuses[i].bonus;
+                case "INT":
+                    INT = INT + datos.race[raceChoice].abIncrease[i].value;
                     break;
-                case "wis":
-                    WIS = WIS + datos.ability_bonuses[i].bonus;
+                case "WIS":
+                    WIS = WIS + datos.race[raceChoice].abIncrease[i].value;
                     break;
-                case "cha":
-                    CHA = CHA + datos.ability_bonuses[i].bonus;
+                case "CHA":
+                    CHA = CHA + datos.race[raceChoice].abIncrease[i].value;
                     break;
             }
         }
-        characteristics = "";
-        for (let i = 0 ; i < datos.traits.length ; i++){
-            if (i <= datos.traits.length-2){
-                characteristics += datos.traits[i].name + ", ";
-            }else{
-                characteristics += datos.traits[i].name + ".";
+        if(datos.race[raceChoice].subrace[subRaceChoice] != [] && subRaceChoice != ""){
+            switch (datos.race[raceChoice].subrace[subRaceChoice].abIncrease.name){
+                case "STR":
+                    STR = STR + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
+                case "DEX":
+                    DEX = DEX + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
+                case "CON":
+                    CON = CON + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
+                case "INT":
+                    INT = INT + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
+                case "WIS":
+                    WIS = WIS + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
+                case "CHA":
+                    CHA = CHA + datos.race[raceChoice].subrace[subRaceChoice].abIncrease.value;
+                    break;
             }
+            selectedSubRace = datos.race[raceChoice].subrace[subRaceChoice].name;
+            subRacePerks = datos.race[raceChoice].subrace[subRaceChoice].perks;
+        }else {
+            selectedSubRace = false;
+            subRacePerks = "None";
         }
-        size = datos.size_description;
-        selectedRace = datos.name;
+        selectedRace = datos.race[raceChoice].name;
+        raceAge = datos.race[raceChoice].age;
+        raceAlignment = datos.race[raceChoice].alignment;
+        raceLanguages = datos.race[raceChoice].languages;
+        racePerks = datos.race[raceChoice].perks;
+        raceProficiencies = datos.race[raceChoice].proficiencies;
+        raceSize = datos.race[raceChoice].size;;
+        raceSpeed = datos.race[raceChoice].speed;
     });
+}
+
+let selectedClass = "";
+let classEquipment = "";
+let classFeatures = "";
+let classHP1 = "";
+let classHP = "";
+let classProficiencies = "";
+let classSavingThrows = "";
+let classSkills = "";
+let profBonus = [];
+let subClassName = "";
+let selectedSubClass = "";
+let subClassFeatures = "";
+
+function classSelect(classChoice , subClassChoice){
+    $.getJSON(db , function(datos){
+        selectedClass = datos.class[classChoice].name;
+        function equipList() {
+            classEquipment = "";
+            for (let item in datos.class[classChoice].equipment){
+                classEquipment += `<li>${datos.class[classChoice].equipment[item]}</li>`
+            };
+        };
+        equipList();
+        classFeatures = datos.class[classChoice].features;
+        classHP1 = datos.class[classChoice].hpL1;
+        classHP = datos.class[classChoice].hp;
+        classProficiencies = datos.class[classChoice].proficiencies;
+        classSavingThrows = datos.class[classChoice].savingThrows;
+        classSkills = datos.class[classChoice].skills;
+        profBonus = datos.profBonus;
+        subClassName = datos.class[classChoice].subclass[subClass.length -1];
+        if(subClassChoice != ""){
+            selectedSubClass = datos.class[classChoice].subclass[subClassChoice].name;
+            subClassFeatures = datos.class[classChoice].subclass[subClassChoice].features;
+        }else{
+            selectedSubClass = "Not Chosen.";
+            subClassFeatures = "None.";
+        }
+    });
+}
+
+let selectedBackground = "";
+let backgroundEquipment = "";
+let backgroundFeature = "";
+let backgroundLanguages = "";
+let backgroundSkills = "";
+let backgroundTools = "";
+let backgroundVariant = "";
+
+function backgroundSelect(backgroundChoice){
+    if(backgroundChoice != ""){
+        $.getJSON(db , function(datos){
+            selectedBackground = datos.background[backgroundChoice].name;
+            backgroundEquipment = datos.background[backgroundChoice].equipment;
+            backgroundFeature = datos.background[backgroundChoice].feature;
+            backgroundLanguages = datos.background[backgroundChoice].languages;
+            backgroundSkills = datos.background[backgroundChoice].skillProficiencies;
+            backgroundTools = datos.background[backgroundChoice].toolProficiencies;
+            backgroundVariant = datos.background[backgroundChoice].variant;
+        });
+    }else{
+        selectedBackground = "";
+        backgroundEquipment = "None.";
+        backgroundFeature = "None.";
+        backgroundLanguages = "None.";
+        backgroundSkills = "None.";
+        backgroundTools = "None.";
+        backgroundVariant = "None.";
+    }
 }
 
 $("#race").ready(raceList);
 function raceList(){
-    $.get(dndData+"/races" , function(datos){
-        for (let i = 0; i < datos.results.length ; i++){
-            $("#race").append(`<option value="${datos.results[i].index}">${datos.results[i].name}</option>`);
+    $.getJSON(db , function(datos){
+        for (let i = 0; i < datos.race.length ; i++){
+            $("#race").append(`<option value="${[i]}">${datos.race[i].name}</option>`);
         }
     });
 }
+$("#class").ready(classList);
+function classList(){
+    $.getJSON(db , function(datos){
+        for (let i = 0; i < datos.class.length ; i++){
+            $("#class").append(`<option value="${[i]}">${datos.class[i].name}</option>`);
+        }
+    });
+}
+$("#background").ready(backgroundList);
+function backgroundList(){
+    $.getJSON(db , function(datos){
+        for (let i = 0; i < datos.background.length ; i++){
+            $("#background").append(`<option value="${[i]}">${datos.background[i].name}</option>`);
+        }
+    });
+}
+$("#race").change(
+    function subRaceList(){
+        $("#subRace").html(`<option value=""></option>`);
+        $.getJSON(db , function(datos){
+            if($("#race").val() != "" && datos.race[$("#race").val()].subrace.length != 0){
+                for (let i = 0; i < datos.race[$("#race").val()].subrace.length ; i++){
+                    $("#subRace").append(`<option value="${[i]}">${datos.race[$("#race").val()].subrace[i].name}</option>`);
+                }
+                $(".subRace").slideDown(500);
+            } else {
+                $(".subRace").slideUp("slow");
+            }
+        });
+    }
+);
+$("#class").change(
+    function subClassList(){
+        $("#subClass").html(`<option value=""></option>`);
+        $.getJSON(db , function(datos){
+            if($("#class").val() != "" && datos.class[$("#class").val()].subclass.length != 0){
+                $(".subClass").html(`${datos.class[$("#class").val()].subclass[datos.class[$("#class").val()].subclass.length - 1]}:
+                                     <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Subclass" id="subClass">
+                                        <option value=""></option>
+                                     </select>`)
+                for (let i = 0; i < datos.class[$("#class").val()].subclass.length - 1 ; i++){
+                    $("#subClass").append(`<option value="${[i]}">${datos.class[$("#class").val()].subclass[i].name}</option>`);
+                }
+                $(".subClass").slideDown(500);
+            } else {
+                $(".subClass").slideUp("slow");
+            }
+        });
+    }
+);

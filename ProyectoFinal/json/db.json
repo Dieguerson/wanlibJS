@@ -1,0 +1,775 @@
+{
+    "race":[
+        {
+            "name": "Dwarf",
+            "abIncrease": [
+                {
+                "name": "CON",
+                "value": 2
+                }
+            ],
+            "age": "Considered young until they're 50. Average lifespan of 350 years.",
+            "alignment": "Usually Lawful-Good.",
+            "size": "Medium. Between 4 and 5 feet tall and average 150 pounds.",
+            "speed": "Base walking speed of 25 feet.",
+            "perks": "Darkvision, Dwarven Resilience, Dwarven Combat Training, Stonecunning.",
+            "proficiencies": "Artisan's tools of choice (smith's, brewer's or mason's).",
+            "languages": "Common and Dwarvish.",
+            "subrace":[
+                {
+                    "name": "Hill",
+                    "abIncrease": {
+                        "name": "WIS",
+                        "value": 1
+                    },
+                    "perks": "Dwarven Toughness."
+                },
+                {
+                    "name": "Mountain",
+                    "abIncrease": {
+                        "name": "STR",
+                        "value": 2
+                    },
+                    "perks": "Dwarven Armor Training."
+                }
+            ]
+        },
+        {
+            "name": "Elf",
+            "abIncrease": [
+                {
+                "name": "DEX",
+                "value": 2
+                }
+            ],
+            "age": "Physical maturity at the same age as humans. Full adulthood at around 100 years. Lifespan: Up to 750 years.",
+            "alignment": "Usually Chaotic-Good. Drows lean towards evil.",
+            "size": "Medium. From under 5 feet to over 6 feet tall. Slender build.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "Darkvision, Keen Senses, Fey Ancestry, Trance.",
+            "proficiencies": "None.",
+            "languages": "Common and Elvish.",
+            "subrace":[
+                {
+                    "name": "High",
+                    "abIncrease": {
+                        "name": "INT",
+                        "value": 1
+                    },
+                    "perks": "Elf Weapon Training, Cantrip, Extra Language."
+                },
+                {
+                    "name": "Wood",
+                    "abIncrease": {
+                        "name": "WIS",
+                        "value": 1
+                    },
+                    "perks": "Elf Weapon Training, Fleet Foot, Mask of the Wild."
+                },
+                {
+                    "name": "Dark",
+                    "abIncrease": {
+                        "name": "CHA",
+                        "value": 1
+                    },
+                    "perks": "Superior Darkvision, Sunlight Sensitivity, Drow Magic, Drow Weapon Training."
+                }
+            ]
+        },
+        {
+            "name": "Halfling",
+            "abIncrease": [
+                {
+                "name": "DEX",
+                "value": 2
+                }
+            ],
+            "age": "Adulthood around 20. Average lifespan: 250 years.",
+            "alignment": "Usually Lawful-Good.",
+            "size": "Small. About 3 feet tall and 40 pounds.",
+            "speed": "Base walking speed of 25 feet.",
+            "perks": "Lucky, Brave, Halfling Nimbleness.",
+            "proficiencies": "None.",
+            "languages": "Common and Halfling.",
+            "subrace":[
+                {
+                    "name": "Lightfoot",
+                    "abIncrease": {
+                        "name": "CHA",
+                        "value": 1
+                    },
+                    "perks": "Naturally Stealthy."
+                },
+                {
+                    "name": "Stout",
+                    "abIncrease": {
+                        "name": "CON",
+                        "value": 1
+                    },
+                    "perks": "Stout Resilience."
+                }
+            ]
+        },
+        {
+            "name": "Human",
+            "abIncrease": [
+                {
+                "name": "STR",
+                "value": 1
+                },
+                {
+                "name": "DEX",
+                "value": 1
+                },
+                {
+                "name": "CON",
+                "value": 1
+                },
+                {
+                "name": "INT",
+                "value": 1
+                },
+                {
+                "name": "WIS",
+                "value": 1
+                },
+                {
+                "name": "CHA",
+                "value": 1
+                }
+            ],
+            "age": "Adulthood in their late teens. Average lifespan: Less than 100 years.",
+            "alignment": "Humans tend to no particular alignment.",
+            "size": "Medium. From 5 feet to 6 feet tall.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "None.",
+            "proficiencies": "None.",
+            "languages": "Common and one other Language.",
+            "subrace":[]
+        },
+        {
+            "name": "Dragonborn",
+            "abIncrease": [
+                {
+                "name": "STR",
+                "value": 2
+                }
+            ],
+            "age": "Rapidly developing, they reach Adulthood around 15. Average lifespan: 80 years.",
+            "alignment": "They tand to the extremes. Most are Good.",
+            "size": "Medium. Well over 6 feet tall and an average 250 pounds.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "Draconic Ancestry, Breath Weapon, Damage Resistance.",
+            "proficiencies": "None.",
+            "languages": "Common and Draconic.",
+            "subrace":[]
+        },
+        {
+            "name": "Gnome",
+            "abIncrease": [
+                {
+                "name": "INT",
+                "value": 2
+                }
+            ],
+            "age": "Adulthood around 40. Average lifespan: 350 to 500 years.",
+            "alignment": "Usually Good.",
+            "size": "Small. Between 3 and 4 feet tall and an average 40 pounds.",
+            "speed": "Base walking speed of 25 feet.",
+            "perks": "Darkvision, Gnome Cunning.",
+            "proficiencies": "None.",
+            "languages": "Common and Gnomish.",
+            "subrace":[
+                {
+                    "name": "Forest",
+                    "abIncrease": {
+                        "name": "DEX",
+                        "value": 1
+                    },
+                    "perks": "Natural Illusionist, Speak with Small Beasts."
+                },
+                {
+                    "name": "Rock",
+                    "abIncrease": {
+                        "name": "CON",
+                        "value": 1
+                    },
+                    "perks": "Artificer's Lore, Tinker."
+                }
+            ]
+        },
+        {
+            "name": "Half-Elf",
+            "abIncrease": [
+                {
+                "name": "CHA",
+                "value": 2
+                }
+            ],
+            "age": "Adulthood around 20. Average lifespan: Over 180 years.",
+            "alignment": "Usually Chaotic.",
+            "size": "Medium. Between 5 and 6 feet tall.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "Increase two stats of your choice by 1, Darkvision, Fey Ancestry, Skill Versatility.",
+            "proficiencies": "None.",
+            "languages": "Common, Elvish and one other Language.",
+            "subrace":[]
+        },
+        {
+            "name": "Half-Orc",
+            "abIncrease": [
+                {
+                "name": "STR",
+                "value": 2
+                },
+                {
+                "name": "CON",
+                "value": 1
+                }
+            ],
+            "age": "Adulthood around 14. Average lifespan: Rarely longer than 75 years.",
+            "alignment": "Usually Chaotic and not strongly inclined toward Good.",
+            "size": "Medium. Between 5 and 6 feet tall. Bulkier than humans.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "Darkvision, Menacing, Relentless Endurance, Savage Attacks.",
+            "proficiencies": "None.",
+            "languages": "Common and Orc.",
+            "subrace":[]
+        },
+        {
+            "name": "Tiefling",
+            "abIncrease": [
+                {
+                "name": "INT",
+                "value": 1
+                },
+                {
+                "name": "CHA",
+                "value": 2
+                }
+            ],
+            "age": "Adulthood around 20. Average lifespan: A bit longer than humans.",
+            "alignment": "Usually Chaotic.",
+            "size": "Medium. From 5 feet to 6 feet tall.",
+            "speed": "Base walking speed of 30 feet.",
+            "perks": "Darkvision, Hellish Resistance, Infernal Legacy.",
+            "proficiencies": "None.",
+            "languages": "Common and Infernal.",
+            "subrace":[]
+        }
+    ],
+    "class":[
+        {
+            "name": "Barbarian",
+            "quickBuild": ["STR" , "CON"],
+            "hpL1": 12,
+            "hp": "1d12 or 7 per level + CON.",
+            "proficiencies": "Light and Medium Armor, Simple and Martial Weapons.",
+            "savingThrows": "Strength and Constitution.",
+            "skills": "Choose 2 from Animal Handling, Athletics, Intimidation, Nature, Perception and Survival.",
+            "equipment":[
+                "A greataxe or any martial melee weapon.",
+                "Two handaxes or any simple weapon.",
+                "An explorer's pack and 4 javelins."
+            ],
+            "features": "Rage (lvl 1), Unarmored Defense (lvl 1), Reckless Attack (lvl 2), Danger Sense (lvl 2), Primal Path (lvl 3), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Extra Attack (lvl 5), Fast Movement (lvl 5), Path Feature (lvl 6, 10, 14), Feral Instinct (lvl 7), Brutal Critical (lvl 9, 13, 17), Relentless Rage (lvl 11), Persistent Rage (lvl 15), Indomitable Might (lvl 18), Primal Champion (lvl 20).",
+            "subclass":[
+                {
+                    "name": "Path of the Berserker",
+                    "features": "Frenzy (lvl 3), Mindless Rage (lvl 6), Intimidating Presence (lvl 10), Retaliation (lvl 14)."
+                },
+                {
+                    "name": "Path of the Totem Warrior",
+                    "features": "Spirit Seeker (lvl 3), Totem Spirit (lvl 3), Aspect of the Beast (lvl 6), Spirit Walker (lvl 10), Totemic Attunement (lvl 14)."
+                },
+                "Primal Path"
+            ]
+        },
+        {
+            "name": "Bard",
+            "quickBuild": ["CHA" , "DEX"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Light Armor, Simple Weapons, Hand Crossbows, Longswords, Rapiers and Shortswords, Three Musical Instruments.",
+            "savingThrows": "Dexterity and Charisma.",
+            "skills": "Choose any 3.",
+            "equipment":[
+                "A rapier or a longsword or any simple weapon.",
+                "A diplomat's pack or an entertainer's pack.",
+                "A lute or any musical instrument.",
+                "Leather armor and a dagger."
+            ],
+            "features": "Spellcasting (lvl 1), Bardic Inspiration (lvl 1, 5, 10, 15), Jack of All Trades (lvl 2), Song of Rest (lvl 2, 9, 13, 17), Bard College (lvl 3), Expertise (lvl 3, 10), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Font of Inspiration (lvl 5), Countercharm (lvl 6), Bard College Feature (lvl 6, 14), Magical Secrets (lvl 10, 14, 18), Superior Inspiration (lvl 20).",
+            "subclass":[
+                {
+                    "name": "College of Lore",
+                    "features": "Bonus Proficiencies (lvl 3), Cutting Words (lvl 3), Additional Magical Secrets (lvl 6), Peerless Skill (lvl 14)."
+                },
+                {
+                    "name": "College of Valor",
+                    "features": "Bonus Proficiencies (lvl 3), Combat Inspiration (lvl 3), Extra Attack (lvl 6), Battle Magic (lvl 14)."
+                },
+                "Bard College"
+            ]
+        },
+        {
+            "name": "Cleric",
+            "quickBuild": ["WIS" , "CON"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Light Armor, Medium Armor, Shields, All Simple Weapons.",
+            "savingThrows": "Wisdom and Charisma.",
+            "skills": "Choose 2 from History, Insight, Medicine, Persuasion, and Religion.",
+            "equipment":[
+                "A mace or a warhammer (if proficient).",
+                "A scale mail, leather armor o chain mail (if proficient).",
+                "A light crossbow and 20 bolts or any simple weapon.",
+                "A priest's pack or an explorer's pack.",
+                "A shield and a holy symbol."
+            ],
+            "features": "Spellcasting (lvl 1), Divine Domain (lvl 1), Channel Divinity (lvl 2, 6, 18), Divine Domain Feature (lvl 2, 6, 8, 17), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Destroy Undead (lvl 5, 8, 11, 14, 17), Divine Intervention (lvl 10, 20).",
+            "subclass":[
+                {
+                    "name": "Knowledge Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Blessings of Knowledge (lvl 1), Knowledge of the Ages (lvl 2; Channel Divinity), Read Thoughts (lvl 6; Channel Divinity), Potent Spellcasting (lvl 8), Visions of the Past (lvl 17)."
+                },
+                {
+                    "name": "Life Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Bonus Proficiency (lvl 1), Disciple of Life (lvl 1), Preserve Life (lvl 2; Channel Divinity), Blessed Healer (lvl 6), Divine Strike (lvl 8), Supreme Healing (lvl 17)."
+                },
+                {
+                    "name": "Light Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Bonus Cantrip (lvl 1), Warding Flare (lvl 1), Radiance of the Dawn (lvl 2; Channel Divinity), Improved Flare (lvl 6), Potent Spellcasting (lvl 8), Corona of Light (lvl 17)."
+                },
+                {
+                    "name": "Nature Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Bonus Proficiency (lvl 1), Acolyte of Nature (lvl 1), Charm Animals and Plants (lvl 2; Channel Divinity), Dampen Elements (lvl 6), Divine Strike (lvl 8), Master of Nature (lvl 17)."
+                },
+                {
+                    "name": "Tempest Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Bonus Proficiencies (lvl 1), Wrath of the Storm (lvl 1), Destructive Wrath (lvl 2; Channel Divinity), Thunderbolt Strike (lvl 6), Divine Strike (lvl 8), Stormborn (lvl 17)."
+                },
+                {
+                    "name": "Trickery Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Blessing of the Trickster (lvl 1), Invoke Duplicity (lvl 2; Channel Divinity), Cloak of Shadows (lvl 6; Channel Divinity), Divine Strike (lvl 8), Improved Duplicity (lvl 17)."
+                },
+                {
+                    "name": "War Domain",
+                    "features": "Special Spells (lvl 1, 3, 5, 7, 9), Bonus Proficiencies (lvl 1), War Priest (lvl 1), Guided Strike (lvl 2; Channel Divinity), War God's Blessing (lvl 6; Channel Divinity), Divine Strike (lvl 8), Avatar of Battle (lvl 17)."
+                },
+                "Divine Domain"
+            ]
+        },
+        {
+            "name": "Druid",
+            "quickBuild": ["WIS" , "CON"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Light Armor, Medium Armor, Shields (druids will not wear armor or use shields made of metal); Clubs, Daggers, Darts, Javelins, Maces, Quarterstaffs, Scimitars, Sickles, Slings, Spears and Herbalism Kit.",
+            "savingThrows": "Intelligence and Wisdom.",
+            "skills": "Choose 2 from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival.",
+            "equipment":[
+                "A wooden shield or any simple weapon.",
+                "A scimitar or any simple melee weapon.",
+                "Leather armor, an explorer's pack, and a druidic focus."
+            ],
+            "features": "Druidic (lvl 1), Spellcasting (lvl 1), Wild Shape (lvl 2, 4, 8), Druidic Circle (lvl 2), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Druidic Circle Feature (lvl 6, 10, 14), Timeless Body (lvl 18), Beast Spells (lvl 18), Archdruid (lvl 20).",
+            "subclass":[
+                {
+                    "name": "Circle of the Land",
+                    "features": "Bonus Cantrip (lvl 2), Natural Recovery (lvl 2), Circle Spells (lvl 3, 5, 7, 9), Land's Stride (lvl 6), Nature's Ward (lvl 10), Nature's Sanctuary (lvl 14)."
+                },
+                {
+                    "name": "Circle of the Moon",
+                    "features": "Combat Wild Shape (lvl 2), Circle Forms (lvl 2), Primal Strike (lvl 6), Elemental Wild Shape (lvl 10), Thousand Forms (lvl 14)."
+                },
+                "Druid Circle"
+            ]
+        },
+        {
+            "name": "Fighter",
+            "quickBuild": ["STR" , "DEX"],
+            "hpL1": 10,
+            "hp": "1d10 or 6 per level + CON.",
+            "proficiencies": "All Armor, Shields, Simple Weapons, Martial Weapons.",
+            "savingThrows": "Strength and Constitution.",
+            "skills": "Choose 2 from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, and Survival.",
+            "equipment":[
+                "A chain mail or leather armor, longbow and 20 arrows.",
+                "A martial weapon and a shield or two martial weapons.",
+                "A light crossbow and 20 bolts or two handaxes.",
+                "A dungeoneer's pack or an explorer's pack."
+            ],
+            "features": "Fighting Style (lvl 1), Second Wind (lvl 1), Action Surge (lvl 2, 16), Martial Archetype (lvl 3), Ability Score Improvement (lvl 4, 6, 8, 12, 14, 16, 19), Extra Attack (lvl 5, 11, 20), Martial Archetype Feature (lvl 7, 10, 15, 18), Indomitable (lvl 9, 13, 17).",
+            "subclass":[
+                {
+                    "name": "Champion",
+                    "features": "Improved Critical (lvl 3), Remarkable Athlete (lvl 7), Aditional Fighting Style (lvl 10), Superior Critical (lvl 15), Survivor (lvl 18)."
+                },
+                {
+                    "name": "Battle Master",
+                    "features": "Combat Superiority (lvl 3), Student of War (lvl 3), Know Your Enemy (lvl 7), Improved Combat Superiority (lvl 10, 18), Relentless (lvl 15)."
+                },
+                {
+                    "name": "Eldritch Knight",
+                    "features": "Spellcasting (lvl 3), Weapon Bond (lvl 3), War Magic (lvl 7), Eldritch Strike (lvl 10), Arcane Charge (lvl 15), Improved War Magic (lvl 18)."
+                },
+                "Martial Achetype"
+            ]
+        },
+        {
+            "name": "Monk",
+            "quickBuild": ["DEX" , "WIS"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Simple Weapons, Shortswords, one type of Artisan's Tools or one Musical Instrument.",
+            "savingThrows": "Strength and Dexterity.",
+            "skills": "Choose 2 from Acrobatics, Athletics, History, Insight, Religion, and Stealth.",
+            "equipment":[
+                "A shortsword or any simple weapon.",
+                "A dungeoneer's pack or an explorer's pack.",
+                "10 darts."
+            ],
+            "features": "Unarmored Defense (lvl 1), Martial Arts (lvl 1), Ki (lvl 2), Unarmored Movement (lvl 2, 9), Monastic Tradition (lvl 3), Deflect Missiles (lvl 3), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Slow Fall (lvl 4), Extra Attack (lvl 5), Stunning Strike (lvl 5), Ki-Empowered Strikes (lvl 6), Monastic Tradition Feature (lvl 6, 11, 17), Evasion (lvl 7), Stillness of Mind (lvl 7), Purity of Body (lvl 10), Tongue of the Sun and Moon (lvl 13), Diamond Soul (lvl 14), Timeless Body (lvl 15), Empty Body (lvl 18), Perfect Self (lvl 20).",
+            "subclass":[
+                {
+                    "name": "Way of the Open Hand",
+                    "features": "Open Hand Technique (lvl 3), Wholeness of Body (lvl 6), Tranquility (lvl 11), Quivering Palm (lvl 17)."
+                },
+                {
+                    "name": "Way of Shadow",
+                    "features": "Shadow Arts (lvl 3), Shadow Step (lvl 6), Cloak of Shadows (lvl 11), Opportunist (lvl 17)."
+                },
+                {
+                    "name": "Way of the Four Elements",
+                    "features": "Disciple of the Elements (lvl 3, 6, 11, 17)."
+                },
+                "Monastic Tradition"
+            ]
+        },
+        {
+            "name": "Paladin",
+            "quickBuild": ["STR" , "CHA"],
+            "hpL1": 10,
+            "hp": "1d10 or 6 per level + CON.",
+            "proficiencies": "All Armor, Shields, Simple Weapons, Martial Weapons.",
+            "savingThrows": "Wisdom and Charisma.",
+            "skills": "Choose 2 from Athletics, Insight, Intimidation, Medicine, Persuasion, Religion.",
+            "equipment":[
+                "A martial weapon and a shield or two martial weapons.",
+                "Five javelins or any simple melee weapon.",
+                "A priest's pack or an explorer's pack.",
+                "Chain mail and a holy symbol."
+            ],
+            "features": "Divine Sense (lvl 1), Lay on Hands (lv 1), Fighting Style (lvl 2), Spellcasting (lvl 2), Divine Smite (lvl 2, 11), Divine Health (lvl 3), Sacred Oath (lvl 3), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Extra Attack (lvl 5), Aura of Protection (lv 6), Sacred Oath Feature (lvl 7,  15, 20), Aura of Courage (lvl 10), Cleansing Touch (lvl 14), Aura Improvements (lvl 18).",
+            "subclass":[
+                {
+                    "name": "Oath of Devotion",
+                    "features": "Oath Spells (lvl 3, 5, 9, 13, 17), Channel Divinity (lvl 3), Aura of Devotion (lvl 7, 18), Purity of Spirit (lvl 15), Holy Nimbus (lvl 20)."
+                },
+                {
+                    "name": "Oath of the Ancients",
+                    "features": "Oath Spells (lvl 3, 5, 9, 13, 17), Channel Divinity (lvl 3), Aura of Warding (lvl 7, 18), Undying Sentinel (lvl 15), Elder Champion (lvl 20)."
+                },
+                {
+                    "name": "Oath of Vengeance",
+                    "features": "Oath Spells (lvl 3, 5, 9, 13, 17), Channel Divinity (lvl 3), Relentless Avenger (lvl 7), Soul of Vengeance (lvl 15), Avenging Angel (lvl 20)."
+                },
+                "Sacred Oath"
+            ]
+        },
+        {
+            "name": "Ranger",
+            "quickBuild": ["DEX" , "WIS"],
+            "hpL1": 10,
+            "hp": "1d10 or 6 per level + CON.",
+            "proficiencies": "Light Armor, Medium Armor, Shields, Simple Weapons, Martial Weapons.",
+            "savingThrows": "Strength and Dexterity.",
+            "skills": "Choose 3 from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival.",
+            "equipment":[
+                "Scale mail or leather armor.",
+                "Two shortswords or two simple melee weapons.",
+                "A dungeoneers's pack or an explorer's pack.",
+                "A longbow and a quiver of 20 arrows."
+            ],
+            "features": "Favored Enemy (lvl 1, 6, 14), Natural Explorer (lvl 1, 6, 10), Fighting Style (lvl 2), Spellcasting (lvl 2), Ranger Archetype (lvl 3), Primeval Awareness (lvl 3), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Extra Attack (lvl 5), Ranger Archetype Feature(lvl 7, 11, 15), Land's Stride (lvl 8), Hide in Plain Sight (lvl 10), Vanish (lvl 14), Feral Senses (lvl 18), Foe Slayer (lvl 20).",
+            "subclass":[ 
+                {
+                    "name": "Hunter",
+                    "features": "Hunter's Prey (lvl 3), Defensive Tactics (lvl 7), Multiattack (lvl 11), Superior Hunter's Defense (lvl 15)."
+                },
+                {
+                    "name": "Beast Master",
+                    "features": "Ranger's Companion (lvl 3), Exceptional Training (lvl 7), Bestial Fury (lvl 11), Share Spells (lvl 15)."
+                },
+                "Ranger Archetype"
+            ]
+        },
+        {
+            "name": "Rogue",
+            "quickBuild": ["DEX" , "INT"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Light Armor, Simple Weapons, Hand Crossbows, Longswords, Rapiers, Shortswords, Thieve's Tools.",
+            "savingThrows": "Dexterity and Intelligences.",
+            "skills": "Choose 4 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth.",
+            "equipment":[
+                "A rapier or a short sword.",
+                "A shortbow and a quiver of 20 arrows or a shortsword.",
+                "A burglar's pack, a dungeoneers's pack or an explorer's pack.",
+                "Leather armor, two daggers and thieve's tools."
+            ],
+            "features": "Expertise (lvl 1, 6), Sneak Attack (lvl 1), Thieve's Cant (lvl 1), Cunning Action (lvl 2), Roguish Archetype (lvl 3), Ability Score Improvement (lvl 4, 8, 10, 12, 16, 19), Uncanny Dodge (lvl 5), Evasion (lvl 7), Roguis Archetype Feature (lvl 9, 13, 17), Reliable Talent (lvl 11), Blindsense (lvl 14), Slippery Mind (lvl 15), Elusive (lvl 18), Stroke of Luck (20).",
+            "subclass":[
+                {
+                    "name": "Thief",
+                    "features": "Fast Hands (lvl 3), Second-Story Work (lvl 3), Supreme Sneak (lvl 9), Use Magic Device (lvl 13), Thief's Reflexes (lvl 17)."
+                },
+                {
+                    "name": "Assassin",
+                    "features": "Bonus Proficiencies (lvl 3), Assassinate (lvl 3), Infiltration Expertise (lvl 9), Impostor (lvl 13), Death Strike (lvl 17)."
+                },
+                {
+                    "name": "Arcane Trickster",
+                    "features": "Spellcasting (lvl 3), Mage Hand Legerdemain (lvl 3), Magical Ambush (lvl 9), Versatile Trickster (lvl 13), Spell Thief (lvl 17)."
+                },
+                "Roguish Archetype"
+            ]
+        },
+        {
+            "name": "Sorcerer",
+            "quickBuild": ["CHA" , "CON"],
+            "hpL1": 6,
+            "hp": "1d6 or 4 per level + CON.",
+            "proficiencies": "Daggers, Darts, Slings, Quarterstaffs, Light Crossbows.",
+            "savingThrows": "Constitution and Charisma.",
+            "skills": "Choose 2 from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion.",
+            "equipment":[
+                "A light crossbow and 20 bolts or any simple weapon.",
+                "A component pouch or an arcane focus.",
+                "A dungeoneers's pack or an explorer's pack.",
+                "Two daggers."
+            ],
+            "features": "Spellcasting (lvl 1), Sorcerous Origin (lvl 1), Font of Magic (lvl 2), Metamagic (lvl 3, 10, 17), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Sorcerous Origin Feature (lvl 6, 14, 18), Sorcerous Restoration (lvl 20).",
+            "subclass":[
+                {
+                    "name": "Draconinc Bloodline",
+                    "features": "Dragon Ancestor (lvl 1), Draconic Resilience (lvl 1), Elemental Affinity (lvl 6), Dragon Wnigs (lvl 14), Draconic Presence (lvl 18)."
+                },
+                {
+                    "name": "Wild Magic",
+                    "features": "Wild Magic Surge (lvl 1), Tides of Chaos (lvl 1), Bend Luck (lvl 6), Controlled Chaos (lvl 14), Spell Bombardment (lvl 18)."
+                },
+                "Sorcerous Origin"
+            ]
+        },
+        {
+            "name": "Warlock",
+            "quickBuild": ["CHA" , "CON"],
+            "hpL1": 8,
+            "hp": "1d8 or 5 per level + CON.",
+            "proficiencies": "Light Armor, Simple Weapons.",
+            "savingThrows": "Wisdom and Charisma.",
+            "skills": "Choose 2 from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion.",
+            "equipment":[
+                "A light crossbow and 20 bolts or any simple weapon.",
+                "A component pouch or an arcane focus.",
+                "A scholar's pack or a dungeoneers's pack.",
+                "Leather armor, any simple weapon, and two daggers."
+            ],
+            "features": "Otherworldly Patron (lvl 1), Pact Magic (lvl 1), Eldritch Invocations (lvl 2), Pact Boon (lvl 3), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Otherworldly Patron Feature (lvl 6, 10, 14), Mystic Arcanum (lvl 11, 13, 15, 17), Eldritch Master (lvl 20).",
+            "subclass":[
+                {
+                    "name": "The Archfey",
+                    "features": "Expanded Spell List (lvl 1), Fey Presence (lvl 1), Misty Escape (lvl 6), Beguiling Defenses (lvl 10), Dark Delirium (lvl 14)."
+                },
+                {
+                    "name": "The Fiend",
+                    "features": "Expanded Spell List (lvl 1), Dark One's Blessing (lvl 1), Dark One's Own Luck (lvl 6), Fiendish Resilience (lvl 10), Hurl Through Hell (lvl 14)."
+                },
+                {
+                    "name": "The Great Old One",
+                    "features": "Expanded Spell List (lvl 1), Awakened Mind (lvl 1), Entropic Ward (lvl 6), Thought Shield (lvl 10), Create Thrall (lvl 14)."
+                },
+                "Otherworldly Patron"
+            ]
+        },
+        {
+            "name": "Wizard",
+            "quickBuild": ["INT" , "CON"],
+            "hpL1": 6,
+            "hp": "1d6 or 4 per level + CON.",
+            "proficiencies": "Daggers, Darts, Slings, Quarterstaffs, Light Crossbows.",
+            "savingThrows": "Intelligence and Wisdom.",
+            "skills": "Choose 2 from Arcana, History, Insight, Investigation, Medicine, and Religion.",
+            "equipment":[
+                "A quarterstaff or a dagger.",
+                "A component pouch or an arcane focus.",
+                "A scholar's pack or an explorers's pack.",
+                "A spellbook."
+            ],
+            "features": "Spellcasting (lvl 1), Arcane Recovery (lvl 1), Arcane Tradition (lvl 2), Ability Score Improvement (lvl 4, 8, 12, 16, 19), Arcane Tradition Feature (lvl 6, 10, 14), Spell Mastery (lvl 18), Signature Spell (lvl 18).",
+            "subclass":[
+                {
+                    "name": "School of Abjuration",
+                    "features": "Abjuration Savant (lvl 2), Arcane Ward (lvl 2), Projected Ward (lvl 6), Improved Abjuration (lvl 10), Spell Resistance (lvl 14)."
+                },
+                {
+                    "name": "School of Conjuration",
+                    "features": "Conjuration Savant (lvl 2), Minor Conjuration (lvl 2), Bening Transposition (lvl 6), Focused Conjuration (lvl 10), Durable Summons (lvl 14)."
+                },
+                {
+                    "name": "School of Divination",
+                    "features": "Divination Savant (lvl 2), Portent (lvl 2), Expert Divination (lvl 6), The Third Eye (lvl 10), Greater Portent (lvl 14)."
+                },
+                {
+                    "name": "School of Enchantment",
+                    "features": "Enchantment Savant (lvl 2), Hypnotic Gaze (lvl 2), Instinctive Charm (lvl 6), Split Enchantment (lvl 10), Alter Memories (lvl 14)."
+                },
+                {
+                    "name": "School of Evocation",
+                    "features": "Evocation Savant (lvl 2), Sculpt Spells (lvl 2), Potent Cantrip (lvl 6), Empowered Evocation (lvl 10), Overchannel (lvl 14)."
+                },
+                {
+                    "name": "School of Illusion",
+                    "features": "Illusion Savant (lvl 2), Improved Minor Illusion (lvl 2), Malleable Illusions (lvl 6), Illusory Self (lvl 10), Illusory Reality (lvl 14)."
+                },
+                {
+                    "name": "School of Necromancy",
+                    "features": "Necromancy Savant (lvl 2), Grim Harvest (lvl 2), Unded Thralls (lvl 6), Inured to Undeath (lvl 10), Command Undead (lvl 14)."
+                },
+                {
+                    "name": "School of Transmutation",
+                    "features": "Transmutation Savant (lvl 2), Minor Alchemy (lvl 2), Transmuter's Stone (lvl 6), Shapechanger (lvl 10), Master Transmuter (lvl 14)."
+                },
+                "Arcane Tradition"
+            ]
+        }
+    ],
+    "profBonus": [
+        "lvl 1 through 4: +2", 
+        "lvl 5 through 8: +3", 
+        "lvl 9 through 12: +4", 
+        "lvl 13 through 16: +5", 
+        "lvl 17 through 20: +6"
+    ],
+    "background":[
+        {
+            "name": "Acolyte",
+            "skillProficiencies": "Insight, Religion.",
+            "toolProficiencies": "None.",
+            "languages": "Two of your choice.",
+            "equipment": "A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a belt pouch containing 15gp.",
+            "feature": "Shelter of the Faithful.",
+            "variant": "None."
+        },
+        {
+            "name": "Charlatan",
+            "skillProficiencies": "Deception, Sleight of Hand.",
+            "toolProficiencies": "Disguise kit, forgery kit.",
+            "languages": "None.",
+            "equipment": "A set of fine clothes, a disguise kit, tools of the con of your choice (ten sttopered bottles filled with colored liquid, a set of weighted dice, a deck, of marked cards, or a signet ring of an imaginary duke), and a belt pouch containing 15gp.",
+            "feature": "False Identity.",
+            "variant": "None."
+        },
+        {
+            "name": "Criminal",
+            "skillProficiencies": "Deception, Stealth.",
+            "toolProficiencies": "One type of gaming set, thieve's tools.",
+            "languages": "None.",
+            "equipment": "A crowbar, a set of dark common clothes including a hood, and a belt pouch containing 15gp.",
+            "feature": "Criminal Contact.",
+            "variant": "Spy."
+        },
+        {
+            "name": "Entertainer",
+            "skillProficiencies": "Acrobatics, Performance.",
+            "toolProficiencies": "Disguise kit, one type of musical instrument.",
+            "languages": "None.",
+            "equipment": "A musical instrument (one of your choice), the favor of an admirer (leve letter, lock of hair, or trinket), a costume, and a belt pouch containing 15gp.",
+            "feature": "By Popular Demand.",
+            "variant": "Gladiator."
+        },
+        {
+            "name": "Folk Hero",
+            "skillProficiencies": "Animal Handling, Survival.",
+            "toolProficiencies": "One type of artisan's tools, vehicle (land).",
+            "languages": "None.",
+            "equipment": "A set of artisan's tools (one of your choice), a shovel, an iron pot, a set of common clothes, and a belt pouch containing 10gp.",
+            "feature": "Rustic Hospitality.",
+            "variant": "None."
+        },
+        {
+            "name": "Guild Artisan",
+            "skillProficiencies": "Insight, Persuasion.",
+            "toolProficiencies": "One type of artisan's tools.",
+            "languages": "One of your choice.",
+            "equipment": "A set of artisan's tools (one of your choice), a letter of introduction from your guild, a set of traveler's clothes, and a belt pouch containing 15gp.",
+            "feature": "Guild Membership.",
+            "variant": "Guild Merchant."
+        },
+        {
+            "name": "Hermit",
+            "skillProficiencies": "Medicine, Religion.",
+            "toolProficiencies": "Herbalism Kit.",
+            "languages": "One of your choice.",
+            "equipment": "A scroll case stuffed full of notes from your studies or prayers, a winter blanket, a set of common clothes, a herbalism kit, and 5gp.",
+            "feature": "Discovery.",
+            "variant": "None."
+        },
+        {
+            "name": "Noble",
+            "skillProficiencies": "History, Persuasion.",
+            "toolProficiencies": "One type of gaming set.",
+            "languages": "One of your choice.",
+            "equipment": "A set of fine clothes, a signet ring, a scroll of pedigree, and a purse containing 25gp.",
+            "feature": "Position of Privilege.",
+            "variant": "Knight."
+        },
+        {
+            "name": "Outlander",
+            "skillProficiencies": "Athletics, Survival.",
+            "toolProficiencies": "One type of musical intrument.",
+            "languages": "One of your choice.",
+            "equipment": "A staff, a hunting trap, a trophy from an animal you killed, a set of traveler's clothes, and a belt containing 10gp.",
+            "feature": "Wanderer.",
+            "variant": "None."
+        },
+        {
+            "name": "Sage",
+            "skillProficiencies": "Arcana, History.",
+            "toolProficiencies": "None.",
+            "languages": "Two of your choice.",
+            "equipment": "A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer, a set of common clothes, and a belt containing 10gp.",
+            "feature": "Researcher.",
+            "variant": "None."
+        },
+        {
+            "name": "Sailor",
+            "skillProficiencies": "Athletics, Perception.",
+            "toolProficiencies": "Navigator's tools, vehicles (water).",
+            "languages": "None.",
+            "equipment": "A belaying pin (club), 50 feet of silk rope, a lucky charm such as a rabbit foot or a small stone with a hole in the center (or you may roll for a random trinket on the trinkets table in chapter 5), a set of common clothes, and a belt containing 10gp.",
+            "feature": "Ship's Passage.",
+            "variant": "Pirate."
+        },
+        {
+            "name": "Soldier",
+            "skillProficiencies": "Athletics, Intimidation.",
+            "toolProficiencies": "One type of gaming set, vehicles (land).",
+            "languages": "None.",
+            "equipment": "An insignia of rank, a trophy taken from a fallen enemy (a dagger, a broken blade, or a piece of a banner), a set of bone dice or a deck of cards, a set of common clothes, and a belt containing 10gp.",
+            "feature": "Military Rank.",
+            "variant": "None."
+        },
+        {
+            "name": "Urchin",
+            "skillProficiencies": "Sleight of Hand, Stealth.",
+            "toolProficiencies": "Disguise kit, thieve's tools.",
+            "languages": "None.",
+            "equipment": "A small knife, a map of the city you grew up in, a pet mouse, a token to remember your parents by, a set of common clothes, and a belt containing 10gp.",
+            "feature": "City Secrets.",
+            "variant": "None."
+        }
+    ]
+}

@@ -163,15 +163,37 @@
                                 <input type="text" name="Name" id="charName" placeholder="Grimund Bronzeheart" class="form-control text-secondary bg-dark border-secondary shadow contact__cursor--color contact__input--color contact__input--color">
                                 <label for="name" class="text-start text-primary">Character's Name:</label>
                             </div>
-                            <label for="statRand" class="text-start fs-5 fw-bold ms-n1 mb-1">Stat Randomizer:</label>
-                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
-                                <option value="4d6">4d6 Method</option>
-                                <option value="3d6">3d6 Method</option>
-                            </select>
-                            <label for="race" class="text-start fs-5 fw-bold ms-n1 mb-1">Race:</label>
-                            <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
-                                <option value="None"></option>
-                            </select>
+                            <label for="race" class="d-block text-start fs-5 fw-bold ms-n1 mb-1">Race:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Race" id="race">
+                                    <option value=""></option>
+                                </select>
+                            </label>
+                            <label for="subRace" class="text-start fs-5 fw-bold ms-n1 mb-1 w-100 d-none subRace">Subrace:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Subrace" id="subRace">
+                                    <option value="None"></option>
+                                </select>
+                            </label>
+                            <label for="class" class="d-block text-start fs-5 fw-bold ms-n1 mb-1">Class:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Class" id="class">
+                                    <option value=""></option>
+                                </select>
+                            </label>
+                            <label for="subClass" class="text-start fs-5 fw-bold ms-n1 mb-1 w-100 d-none subClass">Subclass:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Subclass" id="subClass">
+                                    <option value=""></option>
+                                </select>
+                            </label>
+                            <label for="background" class="d-block text-start fs-5 fw-bold ms-n1 mb-1">Background:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-4" name="Background" id="background">
+                                    <option value=""></option>
+                                </select>
+                            </label>
+                            <label for="statRand" class="d-block text-start fs-5 fw-bold ms-n1 mb-1">Stat Randomizer:
+                                <select class="form-select text-secondary bg-dark border border-secondary shadow mb-3" name="Stats" id="statRand">
+                                    <option value="4d6">4d6 Method</option>
+                                    <option value="3d6">3d6 Method</option>
+                                </select>
+                            </label>
                         </div>
                     </fieldset>
                     <input id="openCharModal" class="btn btn-dark text-primary fw-bold m-2 p-0 px-1 button--border" type="button" value="Character List">

@@ -27,7 +27,7 @@ $.ajax({
     type: "GET",
     data:{
         q: 'Buenos Aires',
-        appid: ,
+        appid: '',
         dataType: 'jsonp',
         units: 'metric'
     },
