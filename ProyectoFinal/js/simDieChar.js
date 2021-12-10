@@ -30,7 +30,6 @@ function access(){
         setTimeout(function(){$("#logIn").children().last().remove();},1300);
     } 
 }
-console.log(JSON.parse(localStorage["users"]).userList)
 $("#userSend").click(function(){
     let i = 0;
     let j = 0;
