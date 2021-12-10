@@ -30,7 +30,7 @@ function access(){
         setTimeout(function(){$("#logIn").children().last().remove();},1300);
     } 
 }
-
+console.log(JSON.parse(localStorage["users"]).userList)
 $("#userSend").click(function(){
     let i = 0;
     let j = 0;
@@ -40,12 +40,21 @@ $("#userSend").click(function(){
         }
         i++
     } 
-    if(j != 0){
+    if(localStorage["users"] == null){
+        localStorage.setItem ("users" , JSON.stringify({userList: []}));
+        const newUser = {name: $("#newUserName").val() , password: $("#userPass").val() , characters: charCol};
+        const saveUser = JSON.parse(localStorage["users"])
+        saveUser.userList.push(newUser);
+        localStorage["users"] = JSON.stringify(saveUser)
+        console.log(saveUser)
+        $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! Your user has been created!</p>`);
+        setTimeout(function(){$("#userCreator").children().last().remove();},1500);}
+    else if(j != 0){
         $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">This user name already exists!</p>`);
         setTimeout(function(){$("#userCreator").children().last().remove();},1500);
     }else{
-        const userData = JSON.stringify({password: $("#userPass").val() , characters: charCol});
-        localStorage.setItem ($("#newUserName").val() , userData);
+        const userData = JSON.stringify({name: $("#newUserName").val() , password: $("#userPass").val() , characters: charCol});
+        localStorage.setItem ("users" , userData);
         $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! Your user has been created!</p>`);
         setTimeout(function(){$("#userCreator").children().last().remove();},1500);}
 });
@@ -191,11 +200,39 @@ class character{
 }
 let STR = 0 , DEX = 0 , CON = 0 , INT = 0 , WIS = 0 , CHA = 0 , charCol=[];
 $("#genesis").click(function(){
+                        let error = false
+                        if($("#charName").val() == ""){
+                            $(".charName").append(`<p class="text-center mt-2 fw-bold d-none fs-6"><i class="bi bi-exclamation-circle-fill text-primary"></i> Character's Name is a necesary field!</p>`);
+                            $(".charName p").fadeIn(500).delay(800).fadeOut(500);
+                            setTimeout(function(){$(".charName p").remove()}, 2100);
+                        }
                         stats();
-                        console.log(STR, DEX, CON, INT, WIS, CHA)
-                        raceSelect($("#race").val() , $("#subRace").val());
-                        classSelect($("#class").val() , $("#subClass").val());
+                        if($("#race").val() == ""){
+                            $(".charRace").append(`<p class="text-center mt-2 fw-bold d-none fs-6"><i class="bi bi-exclamation-circle-fill text-primary"></i> Race is a necesary field!</p>`);
+                            $(".charRace p").fadeIn(500).delay(800).fadeOut(500);
+                            setTimeout(function(){$(".charRace p").remove()}, 2100);
+                        }else{
+                            raceSelect($("#race").val() , $("#subRace").val());
+                        }
+                        if($("#class").val() == ""){
+                            $(".class").append(`<p class="text-center mt-2 fw-bold d-none fs-6"><i class="bi bi-exclamation-circle-fill text-primary"></i> Class is a necesary field!</p>`);
+                            $(".class p").fadeIn(500).delay(800).fadeOut(500);
+                            setTimeout(function(){$(".class p").remove()}, 2100);
+                        }else{
+                            classSelect($("#class").val() , $("#subClass").val());
+                        }
                         backgroundSelect($("#background").val());
+                        if($("#background").val() == ""){
+                            $(".background").append(`<p class="text-center mt-2 fw-bold d-none fs-6"><i class="bi bi-exclamation-circle-fill text-primary"></i> Background is a necesary field!</p>`);
+                            $(".background p").fadeIn(500).delay(800).fadeOut(500);
+                            setTimeout(function(){$(".background p").remove()}, 2100);
+                        }
+                        if($("#charName").val() == "" || $("#race").val() == "" || $("#class").val() == "" || $("#background").val() == ""){
+                            error = true
+                        }else{
+                            error = false
+                        }
+                        if (error){return;}
                         setTimeout(function(){
                             const hero = new character(
                                 $("#charName").val(),
