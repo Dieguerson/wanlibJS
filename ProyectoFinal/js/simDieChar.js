@@ -13,51 +13,71 @@ $("#signUp , #back").click(function(){
     $("#userCreator").toggleClass("d-block d-none");
     $("#logIn").toggleClass("d-flex d-none");
 });
-let user = "";
-let userData;
+let customer = {};
+let customerPlace = -1;
 function access(){
-    if (localStorage.length > 0 && $("#userName").val() != "" && localStorage[$("#userName").val()] != null && $("#pass").val() == JSON.parse(localStorage.getItem($("#userName").val())).password){
-        userData = JSON.parse(localStorage[$("#userName").val()]);
-        charCol = userData.characters;
-        chrLstCrtr();
-        $("#logIn").html(`<fieldset>
-                                <legend class="fw-bold p-1 pt-0">Log In</legend>
-                                <p class="w-100 text-center fs-4 mt-2">You are now logged in!</p>
-                                </legend>
-                          </fieldset>`);
+    if (localStorage.length > 0 && $("#userName").val() != ""){
+        const userList = JSON.parse(localStorage["users"]).userList
+        for(user of userList){
+            if(user.name == $("#userName").val()){
+                customer = user
+                customerPlace = userList.indexOf(user)
+                console.log(customerPlace)
+            }
+        }
+        if($("#pass").val() == customer.password){
+            charCol = customer.characters;
+            chrLstCrtr();
+            $("#logIn").addClass("d-none").removeClass("d-flex")
+            $("#loggedIn").addClass("d-flex").removeClass("d-none")
+        }else{
+            $("#logIn").append(`<p class="w-100 text-center fs-4 mt-2">That's not a valid username or password.</p>`);
+            setTimeout(function(){$("#logIn").children().last().remove();},1300);
+        } 
     }else{
-        $("#logIn").append(`<p class="w-100 text-center fs-4 mt-2">That's not a valid username or password.</p>`);
-        setTimeout(function(){$("#logIn").children().last().remove();},1300);
+            $("#logIn").append(`<p class="w-100 text-center fs-4 mt-2">That's not a valid username or password.</p>`);
+            setTimeout(function(){$("#logIn").children().last().remove();},1300);
     } 
 }
+$("#getOut").click(function(){
+    customer = {}
+    customerPlace = -1
+    charCol=[]
+    chrLstCrtr()
+    $("#loggedIn").addClass("d-none").removeClass("d-flex")
+    $("#logIn").addClass("d-flex").removeClass("d-none")
+})
 $("#userSend").click(function(){
-    let i = 0;
-    let j = 0;
-    while (i <= localStorage.length){
-        if ($("#newUserName").val() == localStorage.key(i)){
-            j++
-        }
-        i++
-    } 
     if(localStorage["users"] == null){
         localStorage.setItem ("users" , JSON.stringify({userList: []}));
         const newUser = {name: $("#newUserName").val() , password: $("#userPass").val() , characters: charCol};
         const saveUser = JSON.parse(localStorage["users"])
         saveUser.userList.push(newUser);
         localStorage["users"] = JSON.stringify(saveUser)
-        console.log(saveUser)
         $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! Your user has been created!</p>`);
-        setTimeout(function(){$("#userCreator").children().last().remove();},1500);}
-    else if(j != 0){
-        $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">This user name already exists!</p>`);
         setTimeout(function(){$("#userCreator").children().last().remove();},1500);
     }else{
-        const userData = JSON.stringify({name: $("#newUserName").val() , password: $("#userPass").val() , characters: charCol});
-        localStorage.setItem ("users" , userData);
-        $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! Your user has been created!</p>`);
-        setTimeout(function(){$("#userCreator").children().last().remove();},1500);}
+        const userList = JSON.parse(localStorage["users"]).userList
+        let userExistance = "Ok, Create Me!"
+        for(user of userList){
+            if($("#newUserName").val() == user.name){
+                userExistance = "Wait, I Exist!"
+                console.log(userExistance)
+            }
+        }
+        if(userExistance != "Ok, Create Me!"){
+            $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">This user name already exists!</p>`);
+            setTimeout(function(){$("#userCreator").children().last().remove();},1500);
+        }else{
+            const newUser = {name: $("#newUserName").val() , password: $("#userPass").val() , characters: charCol};
+            const saveUser = JSON.parse(localStorage["users"])
+            saveUser.userList.push(newUser);
+            localStorage["users"] = JSON.stringify(saveUser);
+            $("#userCreator").append(`<p class="w-100 text-center fs-4 mt-2">Congratulations! Your user has been created!</p>`);
+            setTimeout(function(){$("#userCreator").children().last().remove();},1500);
+        }
+    }
 });
-
 let faceAmm = 0;
 $(".dieSim").click(dieFace);
 $(".dieSim").click(dieRoller);
@@ -198,6 +218,7 @@ class character{
         }
 }
 let STR = 0 , DEX = 0 , CON = 0 , INT = 0 , WIS = 0 , CHA = 0 , charCol=[];
+//Agregar validación "in out"
 $("#genesis").click(function(){
                         let error = false
                         if($("#charName").val() == ""){
@@ -272,9 +293,16 @@ $("#genesis").click(function(){
                                 backgroundVariant,
                                 );
                             charCol.push(hero);
-                            if (user != ""){
-                                userData.characters = charCol;
-                                localStorage[user] = JSON.stringify(userData);
+                            if (customerPlace >= 0){
+                                console.log("customer pre " , customer)
+                                customer.characters = charCol;
+                                let userList = JSON.parse(localStorage["users"]).userList
+                                console.log("userList pre" , userList)
+                                userList[customerPlace] = customer
+                                console.log("customer post " , customer)
+                                console.log("userList post" , userList)
+                                console.log("userList[customer]" , userList[customerPlace])
+                                localStorage["users"]= JSON.stringify({userList: userList})
                             }
                             chrLstCrtr();
                             console.log(hero)},300)

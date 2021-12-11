@@ -7660,6 +7660,10 @@ table {
 .die__results--length {
   max-width: 65ch; }
 
+.buttons--size {
+  width: 80px;
+  height: 30px; }
+
 .logIn--cursor {
   cursor: pointer; }
 
