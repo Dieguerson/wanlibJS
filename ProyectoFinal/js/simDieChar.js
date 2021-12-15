@@ -1,5 +1,12 @@
 let dndData = "json/dndData.json";
 
+function localClear () {
+    if(localStorage != null && localStorage["users"] == null || localStorage.length > 1){
+        localStorage.clear();
+    }
+}
+localClear();
+
 $("#openModal").click(() => {$("#modal").toggleClass("d-block d-none");});
 
 $("#closeModal").click(() => {setTimeout(() => {$("#modal").toggleClass("d-block d-none");},500);});
